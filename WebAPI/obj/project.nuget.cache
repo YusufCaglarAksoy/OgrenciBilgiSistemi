@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "07P0etzTcFmuhSLSVodC7HYnu/mxeqps7RrJ9wnDbz1rfU2v3SUfStcyj9PcHqsgBdpXGTEwBAbaBtTa/srJtA==",
+  "dgSpecHash": "5ZUGeg5hx9Tk73ZiudaOCufD3QrJmvVAWs54k8ukFePDcBrzeCiPcJ2JfwOtB0KV7/gBk8HrLk4Ht08uJBkHgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehmet\\source\\repos\\OBS\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
