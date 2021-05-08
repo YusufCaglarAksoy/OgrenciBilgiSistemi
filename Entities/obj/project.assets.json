@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Mehmet\\.nuget\\packages\\": {},
+    "C:\\Users\\ev\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mehmet\\source\\repos\\OBS\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\Mehmet\\source\\repos\\OBS\\Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\Mehmet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mehmet\\source\\repos\\OBS\\Entities\\obj\\",
+      "projectPath": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\ev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mehmet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ev\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
