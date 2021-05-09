@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "N2NpASOIYlUeqUwTgbFTR7jJ0l/CtGHBvGDZZYBM5xN3m5qK+0gBNxFxSTC7kQgewTosjnIIbGpNXA4io/sKbw==",
+  "dgSpecHash": "FlOmdfjv0iyafuBCmUCsaNWPLMumlf/LOgKdEg3br4G4a3HC2rMP/hCtfVrmsDplNaUhrHnIAcu7wCfesJbJDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\WebAPI\\WebAPI.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\WebAPI\\WebAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mehmet\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mehmet\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
+    "C:\\Users\\Mehmet\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Mehmet\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }

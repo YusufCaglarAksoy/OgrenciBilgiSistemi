@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {}
+    "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {
+    "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\fatih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\obj\\",
+        "projectPath": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Mehmet\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fatih\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mehmet\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,6 +43,56 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Autofac.Extras.DynamicProxy": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
