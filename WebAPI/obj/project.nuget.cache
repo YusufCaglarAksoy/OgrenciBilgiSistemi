@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+7AVtJAJV02Efozxg7MIVF3IyFl+I3Q4ORbfvsC68o8iDFBD7h6X4+FqCiw1f7tBGDP57gtwiUB+3J1JuppsCw==",
+  "dgSpecHash": "9i+uj9Mz4FwYlLc2hXHYr6DqtbvOnp8N/hizgRJ4QOLDLB2hUlHoxcM+bg9Xo6Nhv3iLRVj8MiGLAEEasT4Efw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\ev\\Source\\Repos\\OgrenciBilgiSistemi\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

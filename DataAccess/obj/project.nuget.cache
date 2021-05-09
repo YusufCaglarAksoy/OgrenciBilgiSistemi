@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vGNVQPfeZqHkDU7hLhdV1huOq1/VynJ0ZGpiSNGiJyTGM05VckCH4KvhROSYJybZbhySgTfLRk5h0eEsOkZSKw==",
+  "dgSpecHash": "5HzfzauGjMvCBNc9sfJwmVEr/ZS8aOG0S/QHDIRTAh5wB9GhhbCNqqsCEgWifeNa5rWc58IPKFruWYw2vKdEsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\ev\\Source\\Repos\\OgrenciBilgiSistemi\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

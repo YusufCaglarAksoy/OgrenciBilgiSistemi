@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\ev\\Source\\Repos\\OgrenciBilgiSistemi\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\ev\\Source\\Repos\\OgrenciBilgiSistemi\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\ev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ev\\Source\\Repos\\berkgulsen\\OgrenciBilgiSistemi\\Core\\obj\\",
+      "outputPath": "C:\\Users\\ev\\Source\\Repos\\OgrenciBilgiSistemi\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
