@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entities
 {
-    class deneme
+    public class deneme
     {
     }
 }
