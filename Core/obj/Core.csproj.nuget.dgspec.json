@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {}
+    "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {
+    "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\Mehmet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\obj\\",
+        "projectPath": "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\fatih\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fatih\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mehmet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fatih\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
