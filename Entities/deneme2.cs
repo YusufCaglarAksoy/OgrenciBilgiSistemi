@@ -6,5 +6,6 @@ namespace Entities
 {
     public class deneme2
     {
+        Console.WriteLine("afasf");
     }
 }
