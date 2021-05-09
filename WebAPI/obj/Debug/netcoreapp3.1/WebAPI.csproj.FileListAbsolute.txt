@@ -1,0 +1,5 @@
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfoInputs.cache
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfo.cs
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache

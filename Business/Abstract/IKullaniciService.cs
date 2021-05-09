@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities
+namespace Business.Abstract
 {
-    public class deneme2
+    public interface IKullaniciService
     {
     }
 }

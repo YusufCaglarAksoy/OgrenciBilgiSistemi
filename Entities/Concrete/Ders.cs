@@ -6,6 +6,5 @@ namespace Entities.Concrete
     {
         public string DersId { get; set; }
         public string DerdAdi { get; set; }
-        public int Sube { get; set; }
     }
 }
