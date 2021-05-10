@@ -2,8 +2,9 @@
 
 namespace Entities.Concrete
 {
-    public class AileIletisimBilgileri : IEntity
+    public class AileIletisimBilgi : IEntity
     {
+        public int AileIletisimBilgiId { get; set; }
         public string OgrenciAileAdres { get; set; }
         public string OgrenciAileIl { get; set; }
         public string OgrenciAileIlce { get; set; }

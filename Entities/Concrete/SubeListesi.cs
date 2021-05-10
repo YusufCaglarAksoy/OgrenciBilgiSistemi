@@ -2,7 +2,7 @@
 
 namespace Entities.Concrete
 {
-    public class SubeListesi : IEntity
+    public class SubeListe : IEntity
     {
         public string SubeListesiId { get; set; }
         public string SubeId { get; set; }

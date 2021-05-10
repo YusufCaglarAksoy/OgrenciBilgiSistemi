@@ -4,9 +4,9 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfDersDal : EfEntityRepositoryBase<Ders, OBSContext>, IDersDal
+    public class EfBankaBilgiDal : EfEntityRepositoryBase<BankaBilgi, OBSContext>, IBankaBilgiDal
     {
-        
+
     }
 
 

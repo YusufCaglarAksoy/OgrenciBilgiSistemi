@@ -2,8 +2,9 @@
 
 namespace Entities.Concrete
 {
-    public class DigerIletisimBilgileri : IEntity
+    public class DigerIletisimBilgi : IEntity
     {
+        public int DigerIletisimBilgiId { get; set; }
         public string OgrenciCepTelefonu { get; set; }
         public string EpostaBir { get; set; }
         public string EpostaIki { get; set; }
