@@ -9,6 +9,6 @@ namespace Entities.Concrete
     {
         public string SinavId { get; set; }
         public string SinavAdi { get; set; }
-        public DateTime SınavTarihi { get; set; }
+        public DateTime SinavTarihi { get; set; }
     }
 }

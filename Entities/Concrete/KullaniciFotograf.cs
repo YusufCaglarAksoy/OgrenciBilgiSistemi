@@ -10,6 +10,7 @@ namespace Entities.Concrete
         public string FotografId { get; set; }
         public string FotografYolu { get; set; }
         public string KullaniciId { get; set; }
+        public DateTime Tarih { get; set; }
 
     }
 }
