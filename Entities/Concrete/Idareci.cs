@@ -2,11 +2,12 @@
 
 namespace Entities.Concrete
 {
-    public class Idareci : IEntity
+    public class Idareci : Kullanici
     {
         public string IdareciId { get; set; }
-        public string Unvan { get; set; }
-        public long SicilNo { get; set; }
+        public string UnvanId { get; set; }
+        public int KullaniciId { get; set; }
+
 
     }
 }

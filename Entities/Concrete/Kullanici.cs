@@ -7,7 +7,7 @@ namespace Entities.Concrete
 {
     public class Kullanici:IEntity
     {
-        public string KullanıcıId { get; set; }
+        public string KullaniciId { get; set; }
         public string KullaniciSifre { get; set; }
         public string Isim { get; set; }
         public string Soyad { get; set; }

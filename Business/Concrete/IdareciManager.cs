@@ -2,7 +2,7 @@
 
 namespace Business.Concrete
 {
-    public class IdareciManager : IIdareciService
+    public class IdareciManager : IKullaniciService, IIdareciService
     {
 
     }
