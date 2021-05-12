@@ -12,5 +12,6 @@ namespace DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Ders> Dersler { get; set; }
+        public DbSet<Sinav> Sinavlar { get; set; }
     }
 }

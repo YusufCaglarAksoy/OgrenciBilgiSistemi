@@ -33,9 +33,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Not>>(_notDal.GetAll(), Messages.notListed);
         }
 
-        public IDataResult<Not> GetById(string Id)
+        public IDataResult<Not> GetById(int Id)
         {
-            return new SuccessDataResult<Not>(_notDal.Get(n => n.NotId == Id), Messages.NotGeted);
+            return new SuccessDataResult<Not>(_notDal.Get(n => n.Id == Id), Messages.NotGeted);
         }
 
         public IResult Update(Not not)

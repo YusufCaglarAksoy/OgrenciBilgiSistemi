@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public IDataResult<Harc> GetById(int Id)
         {
-            return new SuccessDataResult<Harc>(_harcDal.Get(h => h.HarcId == Id), Messages.HarcGeted);
+            return new SuccessDataResult<Harc>(_harcDal.Get(h => h.Id == Id), Messages.HarcGeted);
         }
 
         public IResult Update(Harc harc)

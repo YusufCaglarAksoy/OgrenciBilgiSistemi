@@ -7,7 +7,7 @@ namespace Entities.Concrete
 {
     public class Sinav:IEntity
     {
-        public string SinavId { get; set; }
+        public int Id { get; set; }
         public string SinavAdi { get; set; }
         public DateTime SinavTarihi { get; set; }
     }

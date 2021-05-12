@@ -6,7 +6,7 @@ namespace Business.Abstract
 {
     public interface INotService
     {
-        IDataResult<Not> GetById(string Id);
+        IDataResult<Not> GetById(int Id);
         IDataResult<List<Not>> GetAll();
         IResult Add(Not not);
         IResult Delete(Not not);

@@ -4,8 +4,8 @@ namespace Entities.Concrete
 {
     public class Ogrenci : Kullanici
     {
-        public string OgrenciId { get; set; }
-        public string MufredatId { get; set; }
+        public int Id { get; set; }
+        public int MufredatId { get; set; }
         public int BolumId { get; set; }
 
         public string AileAdres { get; set; }

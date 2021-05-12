@@ -8,11 +8,11 @@ namespace Business.Abstract
 {
     public interface IKullaniciFotografService
     {
-        IDataResult<KullaniciFotograf> GetByUserId(string Id);
+        IDataResult<KullaniciFotograf> GetByUserId(int Id);
         IDataResult<List<KullaniciFotograf>> GetAll();
         IResult Add(IFormFile file, KullaniciFotograf kullaniciFotograf);
         IResult Update(IFormFile file, KullaniciFotograf kullaniciFotograf);
         IResult Delete(KullaniciFotograf kullaniciFotograf);
-        IDataResult<KullaniciFotograf> GetById(string Id);
+        IDataResult<KullaniciFotograf> GetById(int Id);
     }
 }

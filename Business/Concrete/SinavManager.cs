@@ -18,10 +18,10 @@ namespace Business.Concrete
             _sinavDal = sinavDal;
         }
 
-        public IDataResult<Sinav> GetById(string Id)
+        public IDataResult<Sinav> GetById(int Id)
         {
 
-            return new SuccessDataResult<Sinav>(_sinavDal.Get(s => s.SinavId == Id), Messages.SinavGeted);
+            return new SuccessDataResult<Sinav>(_sinavDal.Get(s => s.Id == Id), Messages.SinavGeted);
         }
 
         public IResult Add(Sinav sinav)

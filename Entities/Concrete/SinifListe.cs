@@ -4,9 +4,9 @@ namespace Entities.Concrete
 {
     public class SinifListe : IEntity
     {
-        public string SubeListesiId { get; set; }
-        public string SubeId { get; set; }
-        public string OgrenciId { get; set; }
+        public int Id { get; set; }
+        public int SubeId { get; set; }
+        public int OgrenciId { get; set; }
 
     }
 }

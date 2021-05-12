@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public IDataResult<Devamsizlik> GetById(int Id)
         {
-            return new SuccessDataResult<Devamsizlik>(_devamsizlikDal.Get(a => a.DevamsizlikId == Id), Messages.DevamsizlikGeted);
+            return new SuccessDataResult<Devamsizlik>(_devamsizlikDal.Get(a => a.Id == Id), Messages.DevamsizlikGeted);
         }
 
         public IResult Update(Devamsizlik devamsizlik)

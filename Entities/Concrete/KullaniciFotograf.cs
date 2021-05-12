@@ -7,9 +7,9 @@ namespace Entities.Concrete
 {
     public class KullaniciFotograf : IEntity
     {
-        public string FotografId { get; set; }
+        public int Id { get; set; }
         public string FotografYolu { get; set; }
-        public string KullaniciId { get; set; }
+        public int KullaniciId { get; set; }
         public DateTime Tarih { get; set; }
 
     }

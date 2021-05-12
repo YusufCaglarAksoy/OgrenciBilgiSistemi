@@ -4,8 +4,8 @@ namespace Entities.Concrete
 {
     public class Mufredat : IEntity
     {
-        public string MufredatId { get; set; }
-        public string SubeId { get; set; }
+        public int Id { get; set; }
+        public int SubeId { get; set; }
     }
 }
 

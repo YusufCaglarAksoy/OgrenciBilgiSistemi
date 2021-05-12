@@ -15,9 +15,9 @@ namespace Business.Concrete
         {
             _sinifListeDal = sinifListeDal;
         }
-        public IDataResult<SinifListe> GetById(string Id)
+        public IDataResult<SinifListe> GetById(int Id)
         {
-            return new SuccessDataResult<SinifListe>(_sinifListeDal.Get(s => s.SubeListesiId == Id), Messages.SinifListeGeted);
+            return new SuccessDataResult<SinifListe>(_sinifListeDal.Get(s => s.Id == Id), Messages.SinifListeGeted);
         }
 
         public IResult Add(SinifListe sinifListe)

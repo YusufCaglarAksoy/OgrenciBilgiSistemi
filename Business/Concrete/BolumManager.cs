@@ -37,7 +37,7 @@ namespace Business.Concrete
 
         public IDataResult<Bolum> GetById(int Id)
         {
-            return new SuccessDataResult<Bolum>(_bolumDal.Get(b => b.BolumId == Id), Messages.BolumGeted);
+            return new SuccessDataResult<Bolum>(_bolumDal.Get(b => b.Id == Id), Messages.BolumGeted);
         }
 
         public IResult Update(Bolum bolum)

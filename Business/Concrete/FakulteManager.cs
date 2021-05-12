@@ -37,7 +37,7 @@ namespace Business.Concrete
 
         public IDataResult<Fakulte> GetById(int Id)
         {
-            return new SuccessDataResult<Fakulte>(_fakulteDal.Get(f => f.FakulteId == Id), Messages.FakulteGeted);
+            return new SuccessDataResult<Fakulte>(_fakulteDal.Get(f => f.Id == Id), Messages.FakulteGeted);
         }
 
         public IResult Update(Fakulte fakulte)

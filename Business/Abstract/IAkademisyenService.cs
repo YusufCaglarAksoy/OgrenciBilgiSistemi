@@ -6,7 +6,7 @@ namespace Business.Abstract
 {
     public interface IAkademisyenService
     {
-        IDataResult<Akademisyen> GetById(string Id);
+        IDataResult<Akademisyen> GetById(int Id);
         IDataResult<List<Akademisyen>> GetAll();
         IResult Add(Akademisyen akademisyen);
         IResult Update(Akademisyen akademisyen);

@@ -7,10 +7,10 @@ namespace Entities.Concrete
 {
     public class Not:IEntity
     {
-        public string NotId { get; set; }
-        public string SinavId { get; set; }
-        public string DersId { get; set; }
-        public string OgrenciId { get; set; }
+        public int Id { get; set; }
+        public int SinavId { get; set; }
+        public int DersId { get; set; }
+        public int OgrenciId { get; set; }
         public int SinavNot { get; set; }
     }
 }

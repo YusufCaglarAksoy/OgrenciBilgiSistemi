@@ -16,10 +16,10 @@ namespace Business.Concrete
             _akademisyenDal = akademisyenDal;
         }
 
-        public IDataResult<Akademisyen> GetById(string Id)
+        public IDataResult<Akademisyen> GetById(int Id)
         {
 
-            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a=>a.AkademisyenId == Id), Messages.AkademisyenGeted);
+            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a=>a.Id == Id), Messages.AkademisyenGeted);
         }
 
         public IResult Add(Akademisyen akademisyen)

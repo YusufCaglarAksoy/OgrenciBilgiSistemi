@@ -50,14 +50,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<KullaniciFotograf>>(_kullaniciFotografDal.GetAll(), Messages.KullaniciFotografListed);
         }
 
-        public IDataResult<KullaniciFotograf> GetByUserId(string Id)
+        public IDataResult<KullaniciFotograf> GetByUserId(int Id)
         {
             return new SuccessDataResult<KullaniciFotograf>(_kullaniciFotografDal.Get(kf => kf.KullaniciId == Id), Messages.KullaniciFotografGeted);
         }
 
-        public IDataResult<KullaniciFotograf> GetById(string Id)
+        public IDataResult<KullaniciFotograf> GetById(int Id)
         {
-            return new SuccessDataResult<KullaniciFotograf>(_kullaniciFotografDal.Get(kf =>kf.FotografId == Id), Messages.KullaniciFotografGeted);
+            return new SuccessDataResult<KullaniciFotograf>(_kullaniciFotografDal.Get(kf =>kf.KullaniciId == Id), Messages.KullaniciFotografGeted);
         }
     }
 }

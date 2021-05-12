@@ -8,7 +8,7 @@ namespace Business.Abstract
 {
     public interface ISinavService
     {
-        IDataResult<Sinav> GetById(string Id);
+        IDataResult<Sinav> GetById(int Id);
         IDataResult<List<Sinav>> GetAll();
         IResult Add(Sinav sinav);
         IResult Update(Sinav sinav);

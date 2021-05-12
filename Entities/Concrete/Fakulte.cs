@@ -7,7 +7,7 @@ namespace Entities.Concrete
 {
     public class Fakulte : IEntity
     {
-        public int FakulteId { get; set; }
+        public int Id { get; set; }
         public string FakulteAdi { get; set; }
     }
 }
