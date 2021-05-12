@@ -25,7 +25,7 @@ namespace Business.Concrete
         public IResult Add(Akademisyen akademisyen)
         {
             _akademisyenDal.Add(akademisyen);
-            return new Result(true, Messages.AkademisyenAdedd);
+            return new Result(true, Messages.AkademisyenAdded);
         }
 
         public IResult Delete(Akademisyen akademisyen)
@@ -37,12 +37,12 @@ namespace Business.Concrete
         public IResult Update(Akademisyen akademisyen)
         {
             _akademisyenDal.Update(akademisyen);
-            return new Result(true, Messages.);
+            return new Result(true, Messages.AkademisyenUpdated);
         }
 
         public IDataResult<List<Akademisyen>> GetAll()
         {
-            return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(), Messages.);
+            return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(), Messages.AkademisyenListed);
         }
     }
 

@@ -6,9 +6,6 @@ namespace Entities.Concrete
     {
         public string IdareciId { get; set; }
         public string UnvanId { get; set; }
-        public int KullaniciId { get; set; }
-
-
     }
 }
 

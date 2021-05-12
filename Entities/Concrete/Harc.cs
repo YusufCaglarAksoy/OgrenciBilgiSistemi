@@ -7,6 +7,7 @@ namespace Entities.Concrete
 {
     public class Harc: IEntity
     {
+        public int HarcId { get; set; }
         public string OgrenciId { get; set; }
         public string Donem { get; set; }
         public string Tipi { get; set; }

@@ -16,3 +16,10 @@ C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\obj\Debug\netcore
 C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\obj\Debug\netcoreapp3.1\ConsoleUI.csproj.CopyComplete
 C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\obj\Debug\netcoreapp3.1\ConsoleUI.dll
 C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\obj\Debug\netcoreapp3.1\ConsoleUI.pdb
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\bin\Debug\netcoreapp3.1\WebAPI.deps.json
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\bin\Debug\netcoreapp3.1\WebAPI.runtimeconfig.json
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\bin\Debug\netcoreapp3.1\WebAPI.runtimeconfig.dev.json
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\bin\Debug\netcoreapp3.1\WebAPI.exe
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\bin\Debug\netcoreapp3.1\WebAPI.dll
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\ConsoleUI\bin\Debug\netcoreapp3.1\WebAPI.pdb

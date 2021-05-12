@@ -7,7 +7,6 @@ namespace Entities.Concrete
         public string AkademisyenId { get; set; }
         public string UnvanId { get; set; }
         public int BolumId { get; set; }
-        public int KullaniciId { get; set; }
     }
 }
 

@@ -3,18 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.Concrete
+namespace Core.Entities
 {
     public class Kullanici:IEntity
     {
-        public string KullaniciId { get; set; }
-        public string KullaniciSifre { get; set; }
+        public int KullaniciId { get; set; }
         public string Isim { get; set; }
         public string Soyad { get; set; }
         public string EMail { get; set; }
         public string Adres { get; set; }
         public DateTime KayitTarihi { get; set; }
         public string TelefonNumarasi { get; set; }
+
+        public byte[] SaltSifre { get; set; }
+        public byte[] HashsSifre { get; set; }
+        public bool Statu { get; set; }
 
     }
 }
