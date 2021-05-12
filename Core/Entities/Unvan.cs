@@ -7,7 +7,7 @@ namespace Core.Entities
 {
     public class Unvan : IEntity
     {
-        public string UnvanId { get; set; }
+        public int Id { get; set; }
         public string UnvanAdi { get; set; }
     }
 }
