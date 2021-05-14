@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
-    public class SubeController : Controller
+    public class SubelerController : Controller
     {
         ISubeService _subeService;
 
-        public SubeController(ISubeService subeService)
+        public SubelerController(ISubeService subeService)
         {
             _subeService = subeService;
         }

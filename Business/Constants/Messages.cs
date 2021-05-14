@@ -79,5 +79,11 @@
         public static string SubeDeleted = "Sube Silindi";
         public static string SubeUpdated = "Sube Güncellendi";
         public static string SubeListed = "Sube Listelendi";
+
+        public static string OgrenciGeted = "Ogrenci Bulundu";
+        public static string OgrenciAdded = "Ogrenci EKlendi";
+        public static string OgrenciDeleted = "Ogrenci Silindi";
+        public static string OgrenciUpdated = "Ogrenci Güncellendi";
+        public static string OgrenciListed = "Ogrenci Listelendi";
     }
 }

@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
-    public class BolumlerlerController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class IdarecilerController : Controller
     {
-        IBolumService _bolumService;
+        IIdareciService _idareciService;
 
-        public BolumlerlerController(IBolumService bolumService)
+        public IdarecilerController(IIdareciService idareciService)
         {
-            _bolumService = bolumService;
+            _idareciService = idareciService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _bolumService.GetAll();
+            var result = _idareciService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -31,7 +33,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int Id)
         {
-            var result = _bolumService.GetById(Id);
+            var result = _idareciService.GetById(Id);
             if (result.Success)
             {
                 return Ok(result);
@@ -41,9 +43,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Bolum bolum)
+        public IActionResult Add(Idareci akademisyen)
         {
-            var result = _bolumService.Add(bolum);
+            var result = _idareciService.Add(akademisyen);
             if (result.Success)
             {
                 return Ok(result);
@@ -52,9 +54,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Bolum bolum)
+        public IActionResult Delete(Idareci akademisyen)
         {
-            var result = _bolumService.Delete(bolum);
+            var result = _idareciService.Delete(akademisyen);
             if (result.Success)
             {
                 return Ok(result);
@@ -63,9 +65,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Bolum bolum)
+        public IActionResult Update(Idareci akademisyen)
         {
-            var result = _bolumService.Update(bolum);
+            var result = _idareciService.Update(akademisyen);
             if (result.Success)
             {
                 return Ok(result);
@@ -74,3 +76,4 @@ namespace WebAPI.Controllers
         }
     }
 }
+

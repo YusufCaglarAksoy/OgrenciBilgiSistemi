@@ -12,11 +12,11 @@ namespace WebAPI.Controllers
     {
         [Route("api/[controller]")]
         [ApiController]
-        public class DevamsizlikController : ControllerBase
+        public class DevamsizliklarController : ControllerBase
         {
             IDevamsizlikService _devamsizlikService;
 
-            public DevamsizlikController(IDevamsizlikService devamsizlikService)
+            public DevamsizliklarController(IDevamsizlikService devamsizlikService)
             {
                 _devamsizlikService = devamsizlikService;
             }

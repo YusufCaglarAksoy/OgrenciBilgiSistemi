@@ -14,6 +14,9 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<AkademisyenManager>().As<IAkademisyenService>().SingleInstance();
+            builder.RegisterType<EfAkademisyenDal>().As<IAkademisyenDal>().SingleInstance();
+
             builder.RegisterType<BolumManager>().As<IBolumService>().SingleInstance();
             builder.RegisterType<EfBolumDal>().As<IBolumDal>().SingleInstance();
 
@@ -41,11 +44,18 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<NotManager>().As<INotService>().SingleInstance();
             builder.RegisterType<EfNotDal>().As<INotDal>().SingleInstance();
 
+            builder.RegisterType<OgrenciManager>().As<IOgrenciService>().SingleInstance();
+            builder.RegisterType<EfOgrenciDal>().As<IOgrenciDal>().SingleInstance();
+
             builder.RegisterType<SinifListeManager>().As<ISinifListeService>().SingleInstance();
             builder.RegisterType<EfSinifListeDal>().As<ISinifListeDal>().SingleInstance();
 
             builder.RegisterType<SubeManager>().As<ISubeService>().SingleInstance();
             builder.RegisterType<EfSubeDal>().As<ISubeDal>().SingleInstance();
+
+            builder.RegisterType<IdareciManager>().As<IIdareciService>().SingleInstance();
+            builder.RegisterType<EfIdareciDal>().As<IIdareciDal>().SingleInstance();
+
 
 
 

@@ -19,7 +19,7 @@ namespace Business.Concrete
         public IResult Add(Not not)
         {
             _notDal.Add(not);
-            return new Result(true, Messages.NotAdded);
+            return new Result(true, Messages.NotAdded); 
         }
 
         public IResult Delete(Not not)

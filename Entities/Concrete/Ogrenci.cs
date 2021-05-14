@@ -1,10 +1,12 @@
 ﻿using Core.Entities;
+using System;
 
 namespace Entities.Concrete
 {
-    public class Ogrenci : Kullanici
+    public class Ogrenci :Kullanici
     {
         public int Id { get; set; }
+        public int OgrenciNo { get; set; }
         public int MufredatId { get; set; }
         public int BolumId { get; set; }
 
@@ -18,7 +20,7 @@ namespace Entities.Concrete
         public string IBAN { get; set; }
         public string HesapSahibininAdiSoyadi { get; set; }
 
-        public int AkademisyenId { get; set; }
+        public int DanismanId { get; set; }
 
 
     }

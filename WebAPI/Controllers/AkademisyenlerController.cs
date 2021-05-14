@@ -10,18 +10,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SinifListeController : ControllerBase
+    public class AkademisyenlerController : Controller
     {
-        ISinifListeService _sinifListeService;
-        public SinifListeController(ISinifListeService sinifListeService)
+        IAkademisyenService _akademisyenService;
+
+        public AkademisyenlerController(IAkademisyenService akademisyenService)
         {
-            _sinifListeService = sinifListeService;
+            _akademisyenService = akademisyenService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _sinifListeService.GetAll();
+            var result = _akademisyenService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -32,7 +33,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int Id)
         {
-            var result = _sinifListeService.GetById(Id);
+            var result = _akademisyenService.GetById(Id);
             if (result.Success)
             {
                 return Ok(result);
@@ -42,9 +43,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(SinifListe sinifListe)
+        public IActionResult Add(Akademisyen akademisyen)
         {
-            var result = _sinifListeService.Add(sinifListe);
+            var result = _akademisyenService.Add(akademisyen);
             if (result.Success)
             {
                 return Ok(result);
@@ -53,9 +54,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(SinifListe sinifListe)
+        public IActionResult Delete(Akademisyen akademisyen)
         {
-            var result = _sinifListeService.Delete(sinifListe);
+            var result = _akademisyenService.Delete(akademisyen);
             if (result.Success)
             {
                 return Ok(result);
@@ -64,9 +65,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(SinifListe sinifListe)
+        public IActionResult Update(Akademisyen akademisyen)
         {
-            var result = _sinifListeService.Update(sinifListe);
+            var result = _akademisyenService.Update(akademisyen);
             if (result.Success)
             {
                 return Ok(result);
@@ -75,3 +76,4 @@ namespace WebAPI.Controllers
         }
     }
 }
+

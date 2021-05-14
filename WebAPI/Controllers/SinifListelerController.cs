@@ -8,19 +8,20 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
-    public class BolumlerlerController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SinifListelerController : ControllerBase
     {
-        IBolumService _bolumService;
-
-        public BolumlerlerController(IBolumService bolumService)
+        ISinifListeService _sinifListeService;
+        public SinifListelerController(ISinifListeService sinifListeService)
         {
-            _bolumService = bolumService;
+            _sinifListeService = sinifListeService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _bolumService.GetAll();
+            var result = _sinifListeService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -31,7 +32,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int Id)
         {
-            var result = _bolumService.GetById(Id);
+            var result = _sinifListeService.GetById(Id);
             if (result.Success)
             {
                 return Ok(result);
@@ -41,9 +42,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Bolum bolum)
+        public IActionResult Add(SinifListe sinifListe)
         {
-            var result = _bolumService.Add(bolum);
+            var result = _sinifListeService.Add(sinifListe);
             if (result.Success)
             {
                 return Ok(result);
@@ -52,9 +53,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Bolum bolum)
+        public IActionResult Delete(SinifListe sinifListe)
         {
-            var result = _bolumService.Delete(bolum);
+            var result = _sinifListeService.Delete(sinifListe);
             if (result.Success)
             {
                 return Ok(result);
@@ -63,9 +64,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Bolum bolum)
+        public IActionResult Update(SinifListe sinifListe)
         {
-            var result = _bolumService.Update(bolum);
+            var result = _sinifListeService.Update(sinifListe);
             if (result.Success)
             {
                 return Ok(result);
