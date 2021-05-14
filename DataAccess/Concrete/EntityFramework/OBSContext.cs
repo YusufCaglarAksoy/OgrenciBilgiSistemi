@@ -11,10 +11,23 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=OgrenciBilgiSistemi;Trusted_Connection=true");
         }
 
-        public DbSet<Ders> Dersler { get; set; }
-        public DbSet<Sinav> Sinavlar { get; set; }
         public DbSet<Akademisyen> Akademisyenler { get; set; }
-        public DbSet<Ogrenci> Ogrenciler { get; set; }
+        public DbSet<Bolum> Bolumler { get; set; }
+        public DbSet<Ders> Dersler { get; set; }
+        public DbSet<Devamsizlik> Devamsizliklar { get; set; }
+        public DbSet<Fakulte> Fakulteler { get; set; }
+        public DbSet<Harc> Harclar { get; set; }
         public DbSet<Idareci> Idareciler { get; set; }
+        public DbSet<KullaniciFotograf> KullaniciFotograflar { get; set; }
+        public DbSet<Mail> Mailler { get; set; }
+        public DbSet<Mufredat> Mufredatlar { get; set; }
+        public DbSet<Not> Notlar { get; set; }
+        public DbSet<Ogrenci> Ogrenciler { get; set; }
+        public DbSet<Sinav> Sinavlar { get; set; }
+        public DbSet<SinifListe> SinifListeleri { get; set; }
+        public DbSet<Unvan> Unvanlar { get; set; }
+
+
+
     }
 }

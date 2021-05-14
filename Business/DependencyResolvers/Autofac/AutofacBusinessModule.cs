@@ -47,6 +47,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<OgrenciManager>().As<IOgrenciService>().SingleInstance();
             builder.RegisterType<EfOgrenciDal>().As<IOgrenciDal>().SingleInstance();
 
+            builder.RegisterType<SinavManager>().As<ISinavService>().SingleInstance();
+            builder.RegisterType<EfSinavDal>().As<ISinavDal>().SingleInstance();
+
             builder.RegisterType<SinifListeManager>().As<ISinifListeService>().SingleInstance();
             builder.RegisterType<EfSinifListeDal>().As<ISinifListeDal>().SingleInstance();
 

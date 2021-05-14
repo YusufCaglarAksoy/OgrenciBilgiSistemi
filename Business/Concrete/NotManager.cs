@@ -30,7 +30,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Not>> GetAll()
         {
-            return new SuccessDataResult<List<Not>>(_notDal.GetAll(), Messages.notListed);
+            return new SuccessDataResult<List<Not>>(_notDal.GetAll(), Messages.NotListed);
         }
 
         public IDataResult<Not> GetById(int Id)
