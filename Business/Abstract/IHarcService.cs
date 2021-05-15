@@ -11,5 +11,6 @@ namespace Business.Abstract
         IResult Add(Harc harc);
         IResult Update(Harc harc);
         IResult Delete(Harc harc);
+        IDataResult<Harc> GetByOgrenciId(int Id);
     }
 }

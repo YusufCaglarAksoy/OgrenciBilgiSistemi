@@ -44,6 +44,17 @@ namespace Business.Concrete
             _mailDal.Delete(mail);
             return new Result(true, Messages.MailDeleted);
         }
+
+        public IDataResult<List<Mail>> GetByAliciMail(string aliciMail)
+        {
+            return new SuccessDataResult<List<Mail>>(_mailDal.GetAll(m => m.AliciMail == aliciMail), Messages.MailListed);
+        }
+
+        public IDataResult<List<Mail>> GetByGonderenMail(string gonderenMail)
+        {
+            return new SuccessDataResult<List<Mail>>(_mailDal.GetAll(m => m.GonderenMail == gonderenMail), Messages.MailListed);
+        }
+
     }
 }
 

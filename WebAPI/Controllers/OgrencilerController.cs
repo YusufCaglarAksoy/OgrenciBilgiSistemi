@@ -30,10 +30,57 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
+        [HttpGet("getogrenciDetaylari")]
+        public IActionResult GetOgrenciDetay()
         {
-            var result = _ogrenciService.GetById(Id);
+            var result = _ogrenciService.GetAllByOgrenciDto();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyogrencino")]
+        public IActionResult GetByOgrenciNo(int ogrenciNo)
+        {
+            var result = _ogrenciService.GetByOgrenciNo(ogrenciNo);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbybolumid")]
+        public IActionResult GetByBolumId(int Id)
+        {
+            var result = _ogrenciService.GetByBolumId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbydanismanid")]
+        public IActionResult GetByDanismanId(int Id)
+        {
+            var result = _ogrenciService.GetByDanismanId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyemail")]
+        public IActionResult GetByEMail(string email)
+        {
+            var result = _ogrenciService.GetByEMail(email);
             if (result.Success)
             {
                 return Ok(result);

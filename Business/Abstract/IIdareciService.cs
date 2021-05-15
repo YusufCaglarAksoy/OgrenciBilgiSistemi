@@ -11,6 +11,9 @@ namespace Business.Abstract
         IResult Add(Idareci idareci);
         IResult Update(Idareci idareci);
         IResult Delete(Idareci idareci);
+        IDataResult<Idareci> GetBySicilNo(int sicilNo);
+        IDataResult<Idareci> GetByEMail(string email);
+        IDataResult<List<Idareci>> GetByUnvanId(int Id);
     }
 
 }

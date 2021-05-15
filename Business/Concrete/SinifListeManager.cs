@@ -39,5 +39,15 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<SinifListe>>(_sinifListeDal.GetAll(), Messages.SinifListeListed);
         }
+
+        public IDataResult<List<SinifListe>> GetBySubeId(int Id)
+        {
+            return new SuccessDataResult<List<SinifListe>>(_sinifListeDal.GetAll(s => s.SubeId == Id), Messages.SinifListeGeted);
+        }
+
+        public IDataResult<List<SinifListe>> GetByOgrenciId(int Id)
+        {
+            return new SuccessDataResult<List<SinifListe>>(_sinifListeDal.GetAll(a => a.OgrenciId == Id), Messages.SinifListeGeted);
+        }
     }
 }

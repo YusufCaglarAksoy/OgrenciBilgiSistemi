@@ -42,6 +42,29 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpGet("getbygonderenmail")]
+        public IActionResult GetByGonderenMail(string mail)
+        {
+            var result = _mailService.GetByGonderenMail(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyalicimail")]
+        public IActionResult GetByAliciMail(string mail)
+        {
+            var result = _mailService.GetByAliciMail(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
 
         [HttpPost("add")]
         public IActionResult Add(Mail mail)

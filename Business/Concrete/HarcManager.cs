@@ -43,6 +43,11 @@ namespace Business.Concrete
             _harcDal.Update(harc);
             return new Result(true, Messages.HarcUpdated);
         }
+
+        public IDataResult<Harc> GetByOgrenciId(int Id)
+        {
+            return new SuccessDataResult<Harc>(_harcDal.Get(h => h.OgrenciId == Id), Messages.HarcGeted);
+        }
     }
 
 }

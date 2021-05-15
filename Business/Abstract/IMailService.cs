@@ -11,5 +11,7 @@ namespace Business.Abstract
         IResult Add(Mail mail);
         IResult Update(Mail mail);
         IResult Delete(Mail mail);
+        IDataResult<List<Mail>> GetByAliciMail(string aliciMail);
+        IDataResult<List<Mail>> GetByGonderenMail(string gonderenMail);
     }
 }

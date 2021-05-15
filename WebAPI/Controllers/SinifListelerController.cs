@@ -41,6 +41,28 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpGet("getbyogrenciid")]
+        public IActionResult GetByOgrenciId(int ogrenciId)
+        {
+            var result = _sinifListeService.GetByOgrenciId(ogrenciId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbysubeiid")]
+        public IActionResult GetBySubeiId(int subeiId)
+        {
+            var result = _sinifListeService.GetBySubeId(subeiId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(SinifListe sinifListe)
         {

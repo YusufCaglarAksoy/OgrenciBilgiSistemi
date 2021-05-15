@@ -43,6 +43,19 @@ namespace WebAPI.Controllers
         }
 
 
+        [HttpGet("getbyogrenciid")]
+        public IActionResult GetByOgrenciId(int Id)
+        {
+            var result = _harcService.GetByOgrenciId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+
         [HttpPost("add")]
         public IActionResult Add(Harc harc)
         {

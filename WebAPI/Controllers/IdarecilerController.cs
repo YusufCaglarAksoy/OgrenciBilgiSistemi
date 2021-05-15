@@ -42,6 +42,42 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpGet("getbysicilno")]
+        public IActionResult GetBySicilNo(int sicilNo)
+        {
+            var result = _idareciService.GetBySicilNo(sicilNo);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyemail")]
+        public IActionResult GetByEMail(string email)
+        {
+            var result = _idareciService.GetByEMail(email);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyunvanid")]
+        public IActionResult GetByUnvanId(int unvanId)
+        {
+            var result = _idareciService.GetByUnvanId(unvanId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpPost("add")]
         public IActionResult Add(Idareci akademisyen)
         {

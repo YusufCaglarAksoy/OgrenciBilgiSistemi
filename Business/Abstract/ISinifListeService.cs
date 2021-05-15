@@ -11,6 +11,8 @@ namespace Business.Abstract
         IResult Add(SinifListe sinifListe);
         IResult Update(SinifListe sinifListe);
         IResult Delete(SinifListe sinifListe);
+        IDataResult<List<SinifListe>> GetBySubeId(int Id);
+        IDataResult<List<SinifListe>> GetByOgrenciId(int Id);
 
     }
 }

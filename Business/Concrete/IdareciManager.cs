@@ -44,6 +44,21 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Idareci>>(_idareciDal.GetAll(), Messages.IdareciListed);
         }
+
+        public IDataResult<Idareci> GetBySicilNo(int sicilNo)
+        {
+            return new SuccessDataResult<Idareci>(_idareciDal.Get(i => i.SicilNo == sicilNo), Messages.IdareciGeted);
+        }
+
+        public IDataResult<Idareci> GetByEMail(string email)
+        {
+            return new SuccessDataResult<Idareci>(_idareciDal.Get(i => i.EMail == email), Messages.IdareciGeted);
+        }
+
+        public IDataResult<List<Idareci>> GetByUnvanId(int Id)
+        {
+            return new SuccessDataResult<List<Idareci>>(_idareciDal.GetAll(i => i.UnvanId == Id), Messages.IdareciGeted);
+        }
     }
 
 }
