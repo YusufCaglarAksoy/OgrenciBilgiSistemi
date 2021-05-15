@@ -14,7 +14,6 @@ namespace Core.Entities
         public string Adres { get; set; }
         public DateTime KayitTarihi { get; set; }
         public string TelefonNumarasi { get; set; }
-
         public byte[] SaltSifre { get; set; }
         public byte[] HashSifre { get; set; }
         public int UnvanId { get; set; }
