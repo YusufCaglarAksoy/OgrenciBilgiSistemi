@@ -32,7 +32,7 @@ namespace Business.Concrete
 
         public IResult Delete(KullaniciFotograf kullaniciFotograf)
         {
-            var oldpath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\wwwroot")) + _kullaniciFotografDal.Get(I => I.KullaniciId == kullaniciFotograf.KullaniciId).FotografYolu;
+            var oldpath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\wwwroot")) + _kullaniciFotografDal.Get(I => I.Id == kullaniciFotograf.Id).FotografYolu;
             _kullaniciFotografDal.Delete(kullaniciFotograf);
             return new SuccessResult(Messages.KullaniciFotografDeleted);
         }
@@ -40,7 +40,7 @@ namespace Business.Concrete
         public IResult Update(IFormFile file, KullaniciFotograf kullaniciFotograf)
         {
 
-            kullaniciFotograf.FotografYolu = FileHelper.Update(_kullaniciFotografDal.Get(k => k.KullaniciId == kullaniciFotograf.KullaniciId).FotografYolu, file);
+            kullaniciFotograf.FotografYolu = FileHelper.Update(_kullaniciFotografDal.Get(k => k.Id == kullaniciFotograf.Id).FotografYolu, file);
             _kullaniciFotografDal.Update(kullaniciFotograf);
             return new SuccessResult(Messages.KullaniciFotografUpdated);
         }
@@ -50,14 +50,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<KullaniciFotograf>>(_kullaniciFotografDal.GetAll(), Messages.KullaniciFotografListed);
         }
 
-        public IDataResult<KullaniciFotograf> GetByUserId(int Id)
-        {
-            return new SuccessDataResult<KullaniciFotograf>(_kullaniciFotografDal.Get(kf => kf.KullaniciId == Id), Messages.KullaniciFotografGeted);
-        }
 
         public IDataResult<KullaniciFotograf> GetById(int Id)
         {
-            return new SuccessDataResult<KullaniciFotograf>(_kullaniciFotografDal.Get(kf =>kf.KullaniciId == Id), Messages.KullaniciFotografGeted);
+            return new SuccessDataResult<KullaniciFotograf>(_kullaniciFotografDal.Get(kf =>kf.Id == Id), Messages.KullaniciFotografGeted);
         }
     }
 }

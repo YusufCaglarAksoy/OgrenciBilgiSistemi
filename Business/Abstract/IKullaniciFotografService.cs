@@ -8,7 +8,6 @@ namespace Business.Abstract
 {
     public interface IKullaniciFotografService
     {
-        IDataResult<KullaniciFotograf> GetByUserId(int Id);
         IDataResult<List<KullaniciFotograf>> GetAll();
         IResult Add(IFormFile file, KullaniciFotograf kullaniciFotograf);
         IResult Update(IFormFile file, KullaniciFotograf kullaniciFotograf);

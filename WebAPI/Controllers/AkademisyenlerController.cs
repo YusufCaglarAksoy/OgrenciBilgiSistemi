@@ -30,10 +30,46 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
+        [HttpGet("getbybolumid")]
+        public IActionResult GetByBolumId(int Id)
         {
-            var result = _akademisyenService.GetById(Id);
+            var result = _akademisyenService.GetByBolumId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbysicilno")]
+        public IActionResult GetBySicilNo(int sicilNo)
+        {
+            var result = _akademisyenService.GetBySicilNo(sicilNo);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyemail")]
+        public IActionResult GetByEMail(string email)
+        {
+            var result = _akademisyenService.GetByEMail(email);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyunvanid")]
+        public IActionResult GetByUnvanaId(int Id)
+        {
+            var result = _akademisyenService.GetByUnvanId(Id);
             if (result.Success)
             {
                 return Ok(result);

@@ -16,12 +16,6 @@ namespace Business.Concrete
             _akademisyenDal = akademisyenDal;
         }
 
-        public IDataResult<Akademisyen> GetById(int Id)
-        {
-
-            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a=>a.Id == Id), Messages.AkademisyenGeted);
-        }
-
         public IResult Add(Akademisyen akademisyen)
         {
             _akademisyenDal.Add(akademisyen);
@@ -43,6 +37,27 @@ namespace Business.Concrete
         public IDataResult<List<Akademisyen>> GetAll()
         {
             return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(), Messages.AkademisyenListed);
+        }
+
+        public IDataResult<List<Akademisyen>> GetByBolumId(int Id)
+        {
+            return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(a => a.BolumId == Id), Messages.AkademisyenGeted);
+        }
+
+        public IDataResult<Akademisyen> GetBySicilNo(int sicilNo)
+        {
+            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a => a.SicilNo == sicilNo), Messages.AkademisyenGeted);
+
+        }
+
+        public IDataResult<Akademisyen> GetByEMail(string email)
+        {
+            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a => a.EMail == email), Messages.AkademisyenGeted);
+        }
+
+        public IDataResult<List<Akademisyen>> GetByUnvanId(int Id)
+        {
+            return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(a => a.UnvanId == Id), Messages.AkademisyenGeted);
         }
     }
 

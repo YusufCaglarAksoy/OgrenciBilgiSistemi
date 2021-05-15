@@ -7,7 +7,7 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public int OgrenciId { get; set; }
         public int DersId { get; set; }
-        public string DevamsizlikDurumu { get; set; }
+        public bool DevamsizlikDurumu { get; set; }
     }
 }
 
