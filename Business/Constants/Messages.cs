@@ -44,6 +44,12 @@
         public static string IdareciUpdated = "Idareci Güncellendi";
         public static string IdareciListed = "Idareciler Listelendi";
 
+        public static string KullaniciFotografGeted = "Kullanici Fotograf Bulundu";
+        public static string KullaniciFotografAdded = "Kullanici Fotograf EKlendi";
+        public static string KullaniciFotografDeleted = "Kullanici Fotograf Silindi";
+        public static string KullaniciFotografUpdated = "Kullanici Fotograf Güncellendi";
+        public static string KullaniciFotografListed = "Kullanici Fotografları Listelendi";
+
         public static string MailGeted = "Mail Bulundu";
         public static string MailAdded = "Mail EKlendi";
         public static string MailDeleted = "Mail Silindi";

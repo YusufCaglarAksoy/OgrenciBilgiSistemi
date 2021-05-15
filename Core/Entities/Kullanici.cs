@@ -7,7 +7,7 @@ namespace Core.Entities
 {
     public class Kullanici:IEntity
     {
-        public int KullaniciId { get; set; }
+        public int Id { get; set; }
         public string Isim { get; set; }
         public string Soyad { get; set; }
         public string EMail { get; set; }

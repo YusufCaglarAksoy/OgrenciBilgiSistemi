@@ -5,7 +5,6 @@ namespace Entities.Concrete
 {
     public class Ogrenci :Kullanici
     {
-        public int Id { get; set; }
         public int OgrenciNo { get; set; }
         public int MufredatId { get; set; }
         public int BolumId { get; set; }

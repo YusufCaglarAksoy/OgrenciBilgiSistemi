@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public IDataResult<Ogrenci> GetById(int Id)
         {
-            return new SuccessDataResult<Ogrenci>(_ogrenciDal.Get(n => n.KullaniciId == Id), Messages.OgrenciGeted); 
+            return new SuccessDataResult<Ogrenci>(_ogrenciDal.Get(n => n.Id == Id), Messages.OgrenciGeted); 
         }
 
         public IResult Update(Ogrenci ogrenci)

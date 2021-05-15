@@ -19,7 +19,7 @@ namespace Business.Concrete
         public IDataResult<Akademisyen> GetById(int Id)
         {
 
-            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a=>a.KullaniciId == Id), Messages.AkademisyenGeted);
+            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a=>a.Id == Id), Messages.AkademisyenGeted);
         }
 
         public IResult Add(Akademisyen akademisyen)

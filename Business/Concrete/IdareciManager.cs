@@ -19,7 +19,7 @@ namespace Business.Concrete
         public IDataResult<Idareci> GetById(int Id)
         {
 
-            return new SuccessDataResult<Idareci>(_idareciDal.Get(a => a.KullaniciId == Id), Messages.IdareciGeted);
+            return new SuccessDataResult<Idareci>(_idareciDal.Get(a => a.Id == Id), Messages.IdareciGeted);
         }
 
         public IResult Add(Idareci akademisyen)
