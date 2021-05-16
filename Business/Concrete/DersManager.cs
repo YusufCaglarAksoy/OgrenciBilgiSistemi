@@ -44,5 +44,9 @@ namespace Business.Concrete
             return new Result(true, Messages.DersUpdated);
         }
 
+        public IDataResult<Ders> GetByDersKodu(string Id)
+        {
+            return new SuccessDataResult<Ders>(_dersDal.Get(d => d.DersKodu == Id), Messages.DersGeted);
+        }
     }
 }

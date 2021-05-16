@@ -11,6 +11,7 @@ namespace Business.Abstract
         IResult Add(Ders ders);
         IResult Delete(Ders ders);
         IResult Update(Ders ders);
+        IDataResult<Ders> GetByDersKodu(string Id);
 
     }
 }

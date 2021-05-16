@@ -11,5 +11,7 @@ namespace Business.Abstract
         IResult Add(Sube sube);
         IResult Update(Sube sube);
         IResult Delete(Sube sube);
+        IDataResult<List<Sube>> GetByOgretmenId(int ogretmenid);
+        IDataResult<List<Sube>> GetByDersId(int dersid);
     }
 }

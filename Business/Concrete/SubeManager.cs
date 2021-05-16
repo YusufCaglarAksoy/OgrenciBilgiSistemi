@@ -43,5 +43,13 @@ namespace Business.Concrete
             _subeDal.Update(sube);
             return new Result(true, Messages.SubeUpdated);
         }
+        public IDataResult<List<Sube>> GetByDersId(int dersid)
+        {
+            return new SuccessDataResult<List<Sube>>(_subeDal.GetAll(d => d.DersId == dersid), Messages.SubeListed);
+        }
+        public IDataResult<List<Sube>> GetByOgretmenId(int ogretmenid)
+        {
+            return new SuccessDataResult<List<Sube>>(_subeDal.GetAll(m => m.OgretmenId == ogretmenid), Messages.SubeListed);
+        }
     }
 }

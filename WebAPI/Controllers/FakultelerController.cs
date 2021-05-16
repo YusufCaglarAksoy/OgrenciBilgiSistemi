@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class FakultelerController : Controller
     {
         IFakulteService _fakulteService;
@@ -72,5 +74,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+
     }
 }

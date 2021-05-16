@@ -45,5 +45,9 @@ namespace Business.Concrete
             _bolumDal.Update(bolum);
             return new Result(true, Messages.BolumUpdated);
         }
+        public IDataResult<List<Bolum>> GetByFakulteId(int Id)
+        {
+            return new SuccessDataResult<List<Bolum>>(_bolumDal.GetAll(b => b.FakulteId == Id), Messages.FakulteGeted);
+        }
     }
 }

@@ -72,5 +72,29 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getbydersid")]
+        public IActionResult GetByDersId(int dersid)
+        {
+            var result = _subeService.GetByDersId(dersid);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyogretmenid")]
+        public IActionResult GetByOgretmenId(int ogretmenid)
+        {
+            var result = _subeService.GetByOgretmenId(ogretmenid);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

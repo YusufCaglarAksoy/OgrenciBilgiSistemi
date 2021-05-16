@@ -75,5 +75,17 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getbydersKodu")]
+        public IActionResult GetByDersKodu(string Id)
+        {
+            var result = _dersService.GetByDersKodu(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

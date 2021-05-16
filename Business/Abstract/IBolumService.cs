@@ -13,5 +13,6 @@ namespace Business.Abstract
         IResult Add(Bolum bolum);
         IResult Update(Bolum bolum);
         IResult Delete(Bolum bolum);
+        IDataResult<List<Bolum>> GetByFakulteId(int Id);
     }
 }

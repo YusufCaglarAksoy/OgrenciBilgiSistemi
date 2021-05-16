@@ -72,5 +72,18 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getbyfakulteId")]
+        public IActionResult GetByFakulteId(int Id)
+        {
+            var result = _bolumService.GetByFakulteId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
     }
 }
