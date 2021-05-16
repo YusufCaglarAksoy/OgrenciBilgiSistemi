@@ -44,6 +44,42 @@ namespace WebAPI.Controllers
 
             }
 
+            [HttpGet("getbydersid")]
+            public IActionResult GetByDersId(int dersId)
+            {
+                var result = _devamsizlikService.GetByDersId(dersId);
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+
+            }
+
+            [HttpGet("getbyogrenciid")]
+            public IActionResult GetByOgrenciId(int ogrenciId)
+            {
+                var result = _devamsizlikService.GetByOgrenciId(ogrenciId);
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+
+            }
+
+            [HttpGet("getbyid")]
+            public IActionResult GetByDevamsizlikDurumu(bool devamsizlikDurumu)
+            {
+                var result = _devamsizlikService.GetByDevamsizlikDurumu(devamsizlikDurumu);
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+
+            }
+
             [HttpPost("add")]
             public IActionResult Add(Devamsizlik ders)
             {

@@ -43,6 +43,42 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpGet("getbydersid")]
+        public IActionResult GetByDersId(int dersId)
+        {
+            var result = _notService.GetByDersId(dersId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbyogrenciid")]
+        public IActionResult GetByOgrenciId(int Id)
+        {
+            var result = _notService.GetByOgrenciId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbysinavid")]
+        public IActionResult GetBySinavId(int Id)
+        {
+            var result = _notService.GetBySinavId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpPost("add")]
         public IActionResult Add(Not not)
         {

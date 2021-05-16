@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class BolumlerlerController : Controller
     {
         IBolumService _bolumService;

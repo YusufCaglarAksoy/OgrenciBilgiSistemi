@@ -33,6 +33,21 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Not>>(_notDal.GetAll(), Messages.NotListed);
         }
 
+        public IDataResult<List<Not>> GetByDersId(int dersId)
+        {
+            return new SuccessDataResult<List<Not>>(_notDal.GetAll(n => n.DersId == dersId), Messages.NotGeted);
+        }
+
+        public IDataResult<List<Not>> GetByOgrenciId(int ogrenciId)
+        {
+            return new SuccessDataResult<List<Not>>(_notDal.GetAll(n => n.OgrenciId == ogrenciId), Messages.NotGeted);
+        }
+
+        public IDataResult<List<Not>> GetBySinavId(int sinavId)
+        {
+            return new SuccessDataResult<List<Not>>(_notDal.GetAll(n => n.SinavId == sinavId), Messages.NotGeted);
+        }
+
         public IDataResult<Not> GetById(int Id)
         {
             return new SuccessDataResult<Not>(_notDal.Get(n => n.Id == Id), Messages.NotGeted);

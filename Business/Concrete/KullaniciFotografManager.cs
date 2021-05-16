@@ -20,9 +20,9 @@ namespace Business.Concrete
             _kullaniciFotografDal = kullaniciFotografDal;
         }
 
-        public IResult Add(IFormFile file, KullaniciFotograf kullaniciFotograf)
+        public IResult Add(IFormFile file,KullaniciFotograf kullaniciFotograf)
         {
-
+            ;
             kullaniciFotograf.FotografYolu = FileHelper.Add(file);
             kullaniciFotograf.Tarih = DateTime.Now;
             _kullaniciFotografDal.Add(kullaniciFotograf);

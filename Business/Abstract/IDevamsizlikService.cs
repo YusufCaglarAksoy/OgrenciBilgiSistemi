@@ -11,5 +11,8 @@ namespace Business.Abstract
         IResult Add(Devamsizlik devamsizlik);
         IResult Update(Devamsizlik devamsizlik);
         IResult Delete(Devamsizlik devamsizlik);
+        IDataResult<List<Devamsizlik>> GetByOgrenciId(int ogrenciId);
+        IDataResult<List<Devamsizlik>> GetByDersId(int dersId);
+        IDataResult<List<Devamsizlik>> GetByDevamsizlikDurumu(bool devamsizlikDurumu);
     }
 }
