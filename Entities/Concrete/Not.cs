@@ -9,7 +9,6 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public int SinavId { get; set; }
-        public int DersId { get; set; }
         public int OgrenciId { get; set; }
         public int SinavNot { get; set; }
     }
