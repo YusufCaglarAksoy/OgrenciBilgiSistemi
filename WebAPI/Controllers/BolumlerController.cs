@@ -19,29 +19,6 @@ namespace WebAPI.Controllers
             _bolumService = bolumService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _bolumService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
-        {
-            var result = _bolumService.GetById(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
         [HttpPost("add")]
         public IActionResult Add(Bolum bolum)
         {
@@ -75,6 +52,29 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _bolumService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
+        {
+            var result = _bolumService.GetById(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpGet("getbyfakulteId")]
         public IActionResult GetByFakulteId(int Id)
         {
@@ -87,5 +87,15 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpGet("getbolumDetaylari")]
+        public IActionResult GetBolumDetay()
+        {
+            var result = _bolumService.GetAllByBolumDto();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

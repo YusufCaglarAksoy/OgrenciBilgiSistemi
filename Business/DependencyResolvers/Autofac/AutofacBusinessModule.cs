@@ -32,8 +32,14 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<HarcManager>().As<IHarcService>().SingleInstance();
             builder.RegisterType<EfHarcDal>().As<IHarcDal>().SingleInstance();
 
-            builder.RegisterType<KullaniciFotografManager>().As<IKullaniciFotografService>().SingleInstance();
-            builder.RegisterType<EfKullaniciFotografDal>().As<IKullaniciFotografDal>().SingleInstance();
+            builder.RegisterType<AkademisyenFotografManager>().As<IAkademisyenFotografService>().SingleInstance();
+            builder.RegisterType<EfAkademisyenFotografDal>().As<IAkademisyenFotografDal>().SingleInstance();
+
+            builder.RegisterType<IdareciFotografManager>().As<IIdareciFotografService>().SingleInstance();
+            builder.RegisterType<EfIdareciFotografDal>().As<IIdareciFotografDal>().SingleInstance();
+
+            builder.RegisterType<OgrenciFotografManager>().As<IOgrenciFotografService>().SingleInstance();
+            builder.RegisterType<EfOgrenciFotografDal>().As<IOgrenciFotografDal>().SingleInstance();
 
             builder.RegisterType<MailManager>().As<IMailService>().SingleInstance();
             builder.RegisterType<EfMailDal>().As<IMailDal>().SingleInstance();

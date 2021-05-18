@@ -220,7 +220,7 @@
           "dependencies": {
             "Autofac": {
               "target": "Package",
-              "version": "[6.2.0, )"
+              "version": "[6.1.0, )"
             },
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
@@ -232,7 +232,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[10.1.0, )"
+              "version": "[9.5.1, )"
             },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
@@ -240,19 +240,15 @@
             },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[5.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[3.1.11, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.11.0, )"
+              "version": "[6.8.0, )"
             },
             "NETStandard.Library": {
               "target": "Package",

@@ -18,6 +18,39 @@ namespace WebAPI.Controllers
             _sinifListeService = sinifListeService;
         }
 
+        [HttpPost("add")]
+        public IActionResult Add(SinifListe sinifListe)
+        {
+            var result = _sinifListeService.Add(sinifListe);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Delete(SinifListe sinifListe)
+        {
+            var result = _sinifListeService.Delete(sinifListe);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("update")]
+        public IActionResult Update(SinifListe sinifListe)
+        {
+            var result = _sinifListeService.Update(sinifListe);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
@@ -63,32 +96,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("add")]
-        public IActionResult Add(SinifListe sinifListe)
+        [HttpGet("getsiniflisteDetaylari")]
+        public IActionResult GetAllBySinifListeDto()
         {
-            var result = _sinifListeService.Add(sinifListe);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("delete")]
-        public IActionResult Delete(SinifListe sinifListe)
-        {
-            var result = _sinifListeService.Delete(sinifListe);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("update")]
-        public IActionResult Update(SinifListe sinifListe)
-        {
-            var result = _sinifListeService.Update(sinifListe);
+            var result = _sinifListeService.GetAllBySinifListeDto();
             if (result.Success)
             {
                 return Ok(result);

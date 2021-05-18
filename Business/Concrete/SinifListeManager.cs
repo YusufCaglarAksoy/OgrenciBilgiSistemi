@@ -1,9 +1,13 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System.Collections.Generic;
+
 namespace Business.Concrete
 {
     public class SinifListeManager : ISinifListeService
@@ -15,11 +19,8 @@ namespace Business.Concrete
         {
             _sinifListeDal = sinifListeDal;
         }
-        public IDataResult<SinifListe> GetById(int Id)
-        {
-            return new SuccessDataResult<SinifListe>(_sinifListeDal.Get(s => s.Id == Id), Messages.SinifListeGeted);
-        }
 
+        [ValidationAspect(typeof(SinifListeValidator))]
         public IResult Add(SinifListe sinifListe)
         {
             _sinifListeDal.Add(sinifListe);
@@ -30,6 +31,7 @@ namespace Business.Concrete
             _sinifListeDal.Delete(sinifListe);
             return new Result(true, Messages.SinifListeDeleted);
         }
+        [ValidationAspect(typeof(SinifListeValidator))]
         public IResult Update(SinifListe sinifListe)
         {
             _sinifListeDal.Update(sinifListe);
@@ -48,6 +50,14 @@ namespace Business.Concrete
         public IDataResult<List<SinifListe>> GetByOgrenciId(int Id)
         {
             return new SuccessDataResult<List<SinifListe>>(_sinifListeDal.GetAll(a => a.OgrenciId == Id), Messages.SinifListeGeted);
+        }
+        public IDataResult<SinifListe> GetById(int Id)
+        {
+            return new SuccessDataResult<SinifListe>(_sinifListeDal.Get(s => s.Id == Id), Messages.SinifListeGeted);
+        }
+        public IDataResult<List<SinifListeDetayDto>> GetAllBySinifListeDto()
+        {
+            return new SuccessDataResult<List<SinifListeDetayDto>>(_sinifListeDal.GetSinifListeDetaylari(), Messages.SinifListeListed);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IKullaniciFotografDal : IEntityRepository<KullaniciFotograf>
+    public interface IAkademisyenFotografDal : IEntityRepository<AkademisyenFotograf>
     {
     }
 }

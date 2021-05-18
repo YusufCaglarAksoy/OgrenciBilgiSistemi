@@ -9,7 +9,7 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public int OgrenciId { get; set; }
-        public string Donem { get; set; }
+        public int Donem { get; set; }
         public string Tipi { get; set; }
         public string Turu { get; set; }
         public DateTime TahakkukTarihi { get; set; }

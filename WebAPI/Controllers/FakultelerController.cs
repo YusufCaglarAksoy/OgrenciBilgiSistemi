@@ -19,29 +19,6 @@ namespace WebAPI.Controllers
             _fakulteService = fakulteService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _fakulteService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
-        {
-            var result = _fakulteService.GetById(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
         [HttpPost("add")]
         public IActionResult Add(Fakulte fakulte)
         {
@@ -75,6 +52,27 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _fakulteService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
+        {
+            var result = _fakulteService.GetById(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -18,6 +20,7 @@ namespace Business.Concrete
             _fakulteDal = fakulteDal;
         }
 
+        [ValidationAspect(typeof(FakulteValidator))]
         public IResult Add(Fakulte fakulte)
         {
             _fakulteDal.Add(fakulte);
@@ -30,6 +33,13 @@ namespace Business.Concrete
             return new Result(true, Messages.FakulteDeleted);
         }
 
+        [ValidationAspect(typeof(FakulteValidator))]
+        public IResult Update(Fakulte fakulte)
+        {
+            _fakulteDal.Update(fakulte);
+            return new Result(true, Messages.FakulteUpdated);
+        }
+
         public IDataResult<List<Fakulte>> GetAll()
         {
             return new SuccessDataResult<List<Fakulte>>(_fakulteDal.GetAll(), Messages.FakulteListed);
@@ -40,10 +50,5 @@ namespace Business.Concrete
             return new SuccessDataResult<Fakulte>(_fakulteDal.Get(f => f.Id == Id), Messages.FakulteGeted);
         }
 
-        public IResult Update(Fakulte fakulte)
-        {
-            _fakulteDal.Update(fakulte);
-            return new Result(true, Messages.FakulteUpdated);
-        }
     }
 }

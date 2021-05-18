@@ -20,29 +20,6 @@ namespace WebAPI.Controllers
             _dersService = dersService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _dersService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
-        {
-            var result = _dersService.GetById(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
         [HttpPost("add")]
         public IActionResult Add(Ders ders)
         {
@@ -76,6 +53,29 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _dersService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
+        {
+            var result = _dersService.GetById(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpGet("getbydersKodu")]
         public IActionResult GetByDersKodu(string Id)
         {
@@ -86,6 +86,17 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
 
+        }
+
+        [HttpGet("getdersDetaylari")]
+        public IActionResult GetDersDetay()
+        {
+            var result = _dersService.GetAllByDersDto();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }

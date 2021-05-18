@@ -19,6 +19,39 @@ namespace WebAPI.Controllers
             _mailService = mailService;
         }
 
+        [HttpPost("add")]
+        public IActionResult Add(Mail mail)
+        {
+            var result = _mailService.Add(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Delete(Mail mail)
+        {
+            var result = _mailService.Delete(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("update")]
+        public IActionResult Update(Mail mail)
+        {
+            var result = _mailService.Update(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
@@ -66,37 +99,6 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpPost("add")]
-        public IActionResult Add(Mail mail)
-        {
-            var result = _mailService.Add(mail);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("delete")]
-        public IActionResult Delete(Mail mail)
-        {
-            var result = _mailService.Delete(mail);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("update")]
-        public IActionResult Update(Mail mail)
-        {
-            var result = _mailService.Update(mail);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
+        
     }
 }

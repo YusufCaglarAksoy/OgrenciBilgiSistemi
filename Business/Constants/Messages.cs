@@ -34,7 +34,7 @@
 
         public static string HarcAdded = "Harc Eklendi";
         public static string HarcDeleted = "Harc Silindi";
-        public static string HarcListelendi = "Harc Listelendi";
+        public static string HarcListed = "Harc Listelendi";
         public static string HarcGeted = "Harc Id göre Listelendi";
         public static string HarcUpdated = "Harclar Güncellendi";
 

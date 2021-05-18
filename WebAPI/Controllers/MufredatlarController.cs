@@ -19,29 +19,6 @@ namespace WebAPI.Controllers
             _mufredatService = mufredatService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _mufredatService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
-        {
-            var result = _mufredatService.GetById(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
         [HttpPost("add")]
         public IActionResult Add(Mufredat mufredat)
         {
@@ -68,6 +45,40 @@ namespace WebAPI.Controllers
         public IActionResult Update(Mufredat mufredat)
         {
             var result = _mufredatService.Update(mufredat);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _mufredatService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
+        {
+            var result = _mufredatService.GetById(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getmufredatDetaylari")]
+        public IActionResult GetMufredatDetay()
+        {
+            var result = _mufredatService.GetAllByMufredatDto();
             if (result.Success)
             {
                 return Ok(result);

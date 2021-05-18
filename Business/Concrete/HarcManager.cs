@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -16,6 +19,7 @@ namespace Business.Concrete
             _harcDal = harcDal;
         }
 
+        [ValidationAspect(typeof(HarcValidator))]
         public IResult Add(Harc harc)
         {
             _harcDal.Add(harc);
@@ -28,9 +32,16 @@ namespace Business.Concrete
             return new Result(true, Messages.HarcDeleted);
         }
 
+        [ValidationAspect(typeof(HarcValidator))]
+        public IResult Update(Harc harc)
+        {
+            _harcDal.Update(harc);
+            return new Result(true, Messages.HarcUpdated);
+        }
+
         public IDataResult<List<Harc>> GetAll()
         {
-            return new SuccessDataResult<List<Harc>>(_harcDal.GetAll(), Messages.HarcListelendi);
+            return new SuccessDataResult<List<Harc>>(_harcDal.GetAll(), Messages.HarcListed);
         }
 
         public IDataResult<Harc> GetById(int Id)
@@ -38,15 +49,14 @@ namespace Business.Concrete
             return new SuccessDataResult<Harc>(_harcDal.Get(h => h.Id == Id), Messages.HarcGeted);
         }
 
-        public IResult Update(Harc harc)
-        {
-            _harcDal.Update(harc);
-            return new Result(true, Messages.HarcUpdated);
-        }
-
         public IDataResult<Harc> GetByOgrenciId(int Id)
         {
             return new SuccessDataResult<Harc>(_harcDal.Get(h => h.OgrenciId == Id), Messages.HarcGeted);
+        }
+
+        public IDataResult<List<HarcDetayDto>> GetAllByHarcDto()
+        {
+            return new SuccessDataResult<List<HarcDetayDto>>(_harcDal.GetHarcDetaylari(), Messages.HarcListed);
         }
     }
 

@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -16,6 +19,7 @@ namespace Business.Concrete
             _dersDal = dersDal;
         }
 
+        [ValidationAspect(typeof(DersValidator))]
         public IResult Add(Ders ders)
         {
             _dersDal.Add(ders);
@@ -28,6 +32,13 @@ namespace Business.Concrete
             return new Result(true, Messages.DersDeleted);
         }
 
+        [ValidationAspect(typeof(DersValidator))]
+        public IResult Update(Ders ders)
+        {
+            _dersDal.Update(ders);
+            return new Result(true, Messages.DersUpdated);
+        }
+
         public IDataResult<List<Ders>> GetAll()
         {
             return new SuccessDataResult<List<Ders>>(_dersDal.GetAll(), Messages.DersListed);
@@ -38,15 +49,14 @@ namespace Business.Concrete
             return new SuccessDataResult<Ders>(_dersDal.Get(d => d.Id == Id), Messages.DersGeted);
         }
 
-        public IResult Update(Ders ders)
-        {
-            _dersDal.Update(ders);
-            return new Result(true, Messages.DersUpdated);
-        }
-
         public IDataResult<Ders> GetByDersKodu(string Id)
         {
             return new SuccessDataResult<Ders>(_dersDal.Get(d => d.DersKodu == Id), Messages.DersGeted);
+        }
+
+        public IDataResult<List<DersDetayDto>> GetAllByDersDto()
+        {
+            return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(), Messages.DersListed);
         }
     }
 }

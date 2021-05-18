@@ -8,10 +8,10 @@ namespace Business.Abstract
 {
     public interface IFakulteService
     {
-        IDataResult<Fakulte> GetById(int Id);
-        IDataResult<List<Fakulte>> GetAll();
         IResult Add(Fakulte fakulte);
         IResult Update(Fakulte fakulte);
         IResult Delete(Fakulte fakulte);
+        IDataResult<List<Fakulte>> GetAll();
+        IDataResult<Fakulte> GetById(int Id);
     }
 }

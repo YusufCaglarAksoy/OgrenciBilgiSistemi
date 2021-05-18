@@ -19,6 +19,39 @@ namespace WebAPI.Controllers
             _harcService = harcService;
         }
 
+        [HttpPost("add")]
+        public IActionResult Add(Harc harc)
+        {
+            var result = _harcService.Add(harc);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Delete(Harc harc)
+        {
+            var result = _harcService.Delete(harc);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("uppdate")]
+        public IActionResult Update(Harc harc)
+        {
+            var result = _harcService.Update(harc);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
@@ -55,33 +88,10 @@ namespace WebAPI.Controllers
 
         }
 
-
-        [HttpPost("add")]
-        public IActionResult Add(Harc harc)
+        [HttpGet("getHarcDetaylari")]
+        public IActionResult GetHarcDetay()
         {
-            var result = _harcService.Add(harc);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("delete")]
-        public IActionResult Delete(Harc harc)
-        {
-            var result = _harcService.Delete(harc);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("uppdate")]
-        public IActionResult Update(Harc harc)
-        {
-            var result = _harcService.Update(harc);
+            var result = _harcService.GetAllByHarcDto();
             if (result.Success)
             {
                 return Ok(result);

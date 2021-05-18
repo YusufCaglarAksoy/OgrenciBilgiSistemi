@@ -18,7 +18,9 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Fakulte> Fakulteler { get; set; }
         public DbSet<Harc> Harclar { get; set; }
         public DbSet<Idareci> Idareciler { get; set; }
-        public DbSet<KullaniciFotograf> KullaniciFotograflar { get; set; }
+        public DbSet<AkademisyenFotograf> AkademisyenFotograflar { get; set; }
+        public DbSet<IdareciFotograf> IdareciFotograflar { get; set; }
+        public DbSet<OgrenciFotograf> OgrenciFotograflar { get; set; }
         public DbSet<Mail> Mailler { get; set; }
         public DbSet<Mufredat> Mufredatlar { get; set; }
         public DbSet<Not> Notlar { get; set; }
@@ -26,8 +28,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Sinav> Sinavlar { get; set; }
         public DbSet<SinifListe> SinifListeleri { get; set; }
         public DbSet<Unvan> Unvanlar { get; set; }
-
-
-
+        public DbSet<Donem> Donemler { get; set; }
+        public DbSet<SinavTur> SinavTurleri { get; set; }
+        public DbSet<Sube> Subeler { get; set; }
     }
 }

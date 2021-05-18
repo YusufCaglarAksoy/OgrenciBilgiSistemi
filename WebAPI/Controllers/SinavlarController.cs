@@ -18,29 +18,6 @@ namespace WebAPI.Controllers
             _sinavService = sinavService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _sinavService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
-        {
-            var result = _sinavService.GetById(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
         [HttpPost("add")]
         public IActionResult Add(Sinav sinav)
         {
@@ -67,6 +44,40 @@ namespace WebAPI.Controllers
         public IActionResult Update(Sinav sinav)
         {
             var result = _sinavService.Update(sinav);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _sinavService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
+        {
+            var result = _sinavService.GetById(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getsinavDetaylari")]
+        public IActionResult GetAllBySinavDto()
+        {
+            var result = _sinavService.GetAllBySinavDto();
             if (result.Success)
             {
                 return Ok(result);

@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -16,6 +19,7 @@ namespace Business.Concrete
             _notDal = notDal;
         }
 
+        [ValidationAspect(typeof(NotValidator))]
         public IResult Add(Not not)
         {
             _notDal.Add(not);
@@ -28,14 +32,15 @@ namespace Business.Concrete
             return new Result(true, Messages.NotDeleted);
         }
 
+        [ValidationAspect(typeof(NotValidator))]
+        public IResult Update(Not not)
+        {
+            _notDal.Update(not);
+            return new Result(true, Messages.NotUpdated);
+        }
         public IDataResult<List<Not>> GetAll()
         {
             return new SuccessDataResult<List<Not>>(_notDal.GetAll(), Messages.NotListed);
-        }
-
-        public IDataResult<List<Not>> GetByDersId(int dersId)
-        {
-            return new SuccessDataResult<List<Not>>(_notDal.GetAll(n => n.DersId == dersId), Messages.NotGeted);
         }
 
         public IDataResult<List<Not>> GetByOgrenciId(int ogrenciId)
@@ -53,11 +58,9 @@ namespace Business.Concrete
             return new SuccessDataResult<Not>(_notDal.Get(n => n.Id == Id), Messages.NotGeted);
         }
 
-        public IResult Update(Not not)
+        public IDataResult<List<NotDetayDto>> GetAllByNotDto()
         {
-            _notDal.Update(not);
-
-            return new Result(true, Messages.NotUpdated);
+            return new SuccessDataResult<List<NotDetayDto>>(_notDal.GetNotDetaylari(), Messages.NotListed);
         }
     }
 }

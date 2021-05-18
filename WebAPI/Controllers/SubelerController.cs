@@ -19,29 +19,6 @@ namespace WebAPI.Controllers
             _subeService = subeService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _subeService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
-        {
-            var result = _subeService.GetById(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
         [HttpPost("add")]
         public IActionResult Add(Sube sube)
         {
@@ -75,6 +52,29 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _subeService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
+        {
+            var result = _subeService.GetById(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpGet("getbydersid")]
         public IActionResult GetByDersId(int dersid)
         {
@@ -97,6 +97,17 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
 
+        }
+
+        [HttpGet("getsubeDetaylari")]
+        public IActionResult GetAllBySubeDto()
+        {
+            var result = _subeService.GetAllBySubeDto();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }

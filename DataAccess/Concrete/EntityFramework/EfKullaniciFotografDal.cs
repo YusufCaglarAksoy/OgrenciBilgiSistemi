@@ -4,7 +4,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfKullaniciFotografDal : EfEntityRepositoryBase<KullaniciFotograf, OBSContext>, IKullaniciFotografDal
+    public class EfAkademisyenFotografDal : EfEntityRepositoryBase<AkademisyenFotograf, OBSContext>, IAkademisyenFotografDal
     {
 
     }

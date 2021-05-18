@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -27,12 +29,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Mail>>(_mailDal.GetAll(), Messages.MailListed);
         }
 
+        [ValidationAspect(typeof(MailValidator))]
         public IResult Add(Mail mail)
         {
             _mailDal.Add(mail);
             return new Result(true, Messages.MailAdded);
         }
 
+        [ValidationAspect(typeof(MailValidator))]
         public IResult Update(Mail mail)
         {
             _mailDal.Update(mail);

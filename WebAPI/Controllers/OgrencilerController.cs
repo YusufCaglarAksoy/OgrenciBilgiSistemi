@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,50 @@ namespace WebAPI.Controllers
         public OgrencilerController(IOgrenciService ogrenciService)
         {
             _ogrenciService = ogrenciService;
+        }
+
+        [HttpPost("add")]
+        public IActionResult Add(OgrenciForRegisterDto ogrenci)
+        {
+            var result = _ogrenciService.Add(ogrenci);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Delete(int Id)
+        {
+            var result = _ogrenciService.Delete(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("update")]
+        public IActionResult Update(OgrenciForRegisterDto ogrenci)
+        {
+            var result = _ogrenciService.Update(ogrenci);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login(LoginDto loginDto)
+        {
+            var result = _ogrenciService.Login(loginDto);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
 
         [HttpGet("getall")]
@@ -87,39 +132,6 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
 
-        }
-
-        [HttpPost("add")]
-        public IActionResult Add(Ogrenci ogrenci)
-        {
-            var result = _ogrenciService.Add(ogrenci);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("delete")]
-        public IActionResult Delete(Ogrenci ogrenci)
-        {
-            var result = _ogrenciService.Delete(ogrenci);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("update")]
-        public IActionResult Update(Ogrenci ogrenci)
-        {
-            var result = _ogrenciService.Update(ogrenci);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
         }
     }
 }

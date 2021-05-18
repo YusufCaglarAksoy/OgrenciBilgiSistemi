@@ -7,9 +7,9 @@ namespace Core.Utilities.FileHelper
 {
     public class FileHelper
     {
-        public static string Add(IFormFile file)
+        public static string Add(IFormFile file, string kullanici)
         {
-            var result = newPath(file);
+            var result = newPath(file, kullanici);
 
             var sourcepath = Path.GetTempFileName();
             if (file.Length > 0)
@@ -37,9 +37,9 @@ namespace Core.Utilities.FileHelper
 
             return new SuccessResult();
         }
-        public static string Update(string sourcePath, IFormFile file)
+        public static string Update(string sourcePath, IFormFile file, string  kullanici)
         {
-            var result = newPath(file);
+            var result = newPath(file, kullanici);
 
             try
             {
@@ -61,14 +61,14 @@ namespace Core.Utilities.FileHelper
 
             return result.Path2;
         }
-        public static (string newPath, string Path2) newPath(IFormFile file)
+        public static (string newPath, string Path2) newPath(IFormFile file, string kullanici)
         {
             FileInfo ff = new FileInfo(file.FileName);
             string fileExtension = ff.Extension;
 
             var newPath = Guid.NewGuid().ToString() + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Year + fileExtension;
             
-            string path = Environment.CurrentDirectory + @"\wwwroot\Images";
+            string path = Environment.CurrentDirectory + @"\wwwroot\Images\"+ kullanici;
 
             string result = $@"{path}\{newPath}";
 

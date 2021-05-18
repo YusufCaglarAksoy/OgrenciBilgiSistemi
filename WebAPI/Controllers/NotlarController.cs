@@ -20,65 +20,6 @@ namespace WebAPI.Controllers
             _notService = notService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
-        {
-            var result = _notService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int Id)
-        {
-            var result = _notService.GetById(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
-        [HttpGet("getbydersid")]
-        public IActionResult GetByDersId(int dersId)
-        {
-            var result = _notService.GetByDersId(dersId);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
-        [HttpGet("getbyogrenciid")]
-        public IActionResult GetByOgrenciId(int Id)
-        {
-            var result = _notService.GetByOgrenciId(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
-        [HttpGet("getbysinavid")]
-        public IActionResult GetBySinavId(int Id)
-        {
-            var result = _notService.GetBySinavId(Id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
-        }
-
         [HttpPost("add")]
         public IActionResult Add(Not not)
         {
@@ -105,6 +46,65 @@ namespace WebAPI.Controllers
         public IActionResult Update(Not not)
         {
             var result = _notService.Update(not);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _notService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
+        {
+            var result = _notService.GetById(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+
+        [HttpGet("getbyogrenciid")]
+        public IActionResult GetByOgrenciId(int Id)
+        {
+            var result = _notService.GetByOgrenciId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbysinavid")]
+        public IActionResult GetBySinavId(int Id)
+        {
+            var result = _notService.GetBySinavId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getnotlardetaylari")]
+        public IActionResult GetNotDetay()
+        {
+            var result = _notService.GetAllByNotDto();
             if (result.Success)
             {
                 return Ok(result);

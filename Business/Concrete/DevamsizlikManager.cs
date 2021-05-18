@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -16,6 +19,7 @@ namespace Business.Concrete
             _devamsizlikDal = devamsizlikDal;
         }
 
+        [ValidationAspect(typeof(DevamsizlikValidator))]
         public IResult Add(Devamsizlik devamsizlik)
         {
             _devamsizlikDal.Add(devamsizlik);
@@ -26,6 +30,13 @@ namespace Business.Concrete
         {
             _devamsizlikDal.Add(devamsizlik);
             return new Result(true, Messages.DevamsizlikDeleted);
+        }
+
+        [ValidationAspect(typeof(DevamsizlikValidator))]
+        public IResult Update(Devamsizlik devamsizlik)
+        {
+            _devamsizlikDal.Update(devamsizlik);
+            return new Result(true, Messages.DevamsizlikUpdated);
         }
 
         public IDataResult<List<Devamsizlik>> GetAll()
@@ -52,11 +63,9 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Devamsizlik>>(_devamsizlikDal.GetAll(a => a.OgrenciId == ogrenciId), Messages.DevamsizlikGeted);
         }
-
-        public IResult Update(Devamsizlik devamsizlik)
+        public IDataResult<List<DevamsizlikDetayDto>> GetAllByDevamsizlikDto()
         {
-            _devamsizlikDal.Update(devamsizlik);
-            return new Result(true, Messages.DevamsizlikUpdated);
+            return new SuccessDataResult<List<DevamsizlikDetayDto>>(_devamsizlikDal.GetDevamsizlikDetaylari(), Messages.DevamsizlikListed);
         }
     }
 }

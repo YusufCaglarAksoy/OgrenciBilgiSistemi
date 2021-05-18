@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,50 @@ namespace WebAPI.Controllers
         public AkademisyenlerController(IAkademisyenService akademisyenService)
         {
             _akademisyenService = akademisyenService;
+        }
+
+        [HttpPost("add")]
+        public IActionResult Add(AkademisyenForRegisterDto akademisyen)
+        {
+            var result = _akademisyenService.Add(akademisyen);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Delete(int Id)
+        {
+            var result = _akademisyenService.Delete(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("update")]
+        public IActionResult Update(AkademisyenForRegisterDto akademisyen)
+        {
+            var result = _akademisyenService.Update(akademisyen);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login(LoginDto loginDto)
+        {
+            var result = _akademisyenService.Login(loginDto);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
 
         [HttpGet("getall")]
@@ -67,9 +112,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getbyunvanid")]
-        public IActionResult GetByUnvanaId(int Id)
+        public IActionResult GetByUnvanId(int unvanId)
         {
-            var result = _akademisyenService.GetByUnvanId(Id);
+            var result = _akademisyenService.GetByUnvanId(unvanId);
             if (result.Success)
             {
                 return Ok(result);
@@ -78,32 +123,22 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpPost("add")]
-        public IActionResult Add(Akademisyen akademisyen)
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int Id)
         {
-            var result = _akademisyenService.Add(akademisyen);
+            var result = _akademisyenService.GetById(Id);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
+
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete(Akademisyen akademisyen)
+        [HttpGet("getakademisyenDetaylari")]
+        public IActionResult GetAkademisyenDetay()
         {
-            var result = _akademisyenService.Delete(akademisyen);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        [HttpPost("update")]
-        public IActionResult Update(Akademisyen akademisyen)
-        {
-            var result = _akademisyenService.Update(akademisyen);
+            var result = _akademisyenService.GetAllByAkademisyenDto();
             if (result.Success)
             {
                 return Ok(result);

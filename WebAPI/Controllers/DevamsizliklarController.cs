@@ -21,6 +21,39 @@ namespace WebAPI.Controllers
                 _devamsizlikService = devamsizlikService;
             }
 
+            [HttpPost("add")]
+            public IActionResult Add(Devamsizlik ders)
+            {
+                var result = _devamsizlikService.Add(ders);
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+            }
+
+            [HttpPost("delete")]
+            public IActionResult Delete(Devamsizlik devamsizlik)
+            {
+                var result = _devamsizlikService.Delete(devamsizlik);
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+            }
+
+            [HttpPost("update")]
+            public IActionResult Update(Devamsizlik devamsizlik)
+            {
+                var result = _devamsizlikService.Update(devamsizlik);
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+            }
+
             [HttpGet("getall")]
             public IActionResult GetAll()
             {
@@ -80,32 +113,10 @@ namespace WebAPI.Controllers
 
             }
 
-            [HttpPost("add")]
-            public IActionResult Add(Devamsizlik ders)
+            [HttpGet("getdevamsizlikDetaylari")]
+            public IActionResult GetDevamsizlikDetay()
             {
-                var result = _devamsizlikService.Add(ders);
-                if (result.Success)
-                {
-                    return Ok(result);
-                }
-                return BadRequest(result);
-            }
-
-            [HttpPost("delete")]
-            public IActionResult Delete(Devamsizlik devamsizlik)
-            {
-                var result = _devamsizlikService.Delete(devamsizlik);
-                if (result.Success)
-                {
-                    return Ok(result);
-                }
-                return BadRequest(result);
-            }
-
-            [HttpPost("update")]
-            public IActionResult Update(Devamsizlik devamsizlik)
-            {
-                var result = _devamsizlikService.Update(devamsizlik);
+                var result = _devamsizlikService.GetAllByDevamsizlikDto();
                 if (result.Success)
                 {
                     return Ok(result);

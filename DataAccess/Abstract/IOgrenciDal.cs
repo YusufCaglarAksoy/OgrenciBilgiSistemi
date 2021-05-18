@@ -9,6 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface IOgrenciDal : IEntityRepository<Ogrenci>
     {
-        List<OgrenciDetayDTO> GetOgrenciDetaylari(Expression<Func<Ogrenci, bool>> filter = null);
+        List<OgrenciDetayDto> GetOgrenciDetaylari(Expression<Func<Ogrenci, bool>> filter = null);
     }
 }

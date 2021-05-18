@@ -1,9 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
+using Entities.DTOs;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,12 +20,7 @@ namespace Business.Concrete
             _sinavDal = sinavDal;
         }
 
-        public IDataResult<Sinav> GetById(int Id)
-        {
-
-            return new SuccessDataResult<Sinav>(_sinavDal.Get(s => s.Id == Id), Messages.SinavGeted);
-        }
-
+        [ValidationAspect(typeof(SinavValidator))]
         public IResult Add(Sinav sinav)
         {
             _sinavDal.Add(sinav);
@@ -36,6 +33,7 @@ namespace Business.Concrete
             return new Result(true, Messages.SinavDeleted);
         }
 
+        [ValidationAspect(typeof(SinavValidator))]
         public IResult Update(Sinav sinav)
         {
             _sinavDal.Update(sinav);
@@ -45,6 +43,16 @@ namespace Business.Concrete
         public IDataResult<List<Sinav>> GetAll()
         {
             return new SuccessDataResult<List<Sinav>>(_sinavDal.GetAll(), Messages.SinavListed);
+        }
+        public IDataResult<Sinav> GetById(int Id)
+        {
+
+            return new SuccessDataResult<Sinav>(_sinavDal.Get(s => s.Id == Id), Messages.SinavGeted);
+        }
+
+        public IDataResult<List<SinavDetayDto>> GetAllBySinavDto()
+        {
+            return new SuccessDataResult<List<SinavDetayDto>>(_sinavDal.GetSinavDetaylari(), Messages.SinavListed);
         }
     }
 }
