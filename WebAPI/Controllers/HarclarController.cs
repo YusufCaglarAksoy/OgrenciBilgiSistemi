@@ -41,7 +41,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("uppdate")]
+        [HttpPost("update")]
         public IActionResult Update(Harc harc)
         {
             var result = _harcService.Update(harc);
@@ -88,7 +88,7 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpGet("getHarcDetaylari")]
+        [HttpGet("getharcdetaylari")]
         public IActionResult GetHarcDetay()
         {
             var result = _harcService.GetAllByHarcDto();

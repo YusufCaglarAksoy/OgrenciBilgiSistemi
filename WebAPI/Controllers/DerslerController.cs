@@ -77,9 +77,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getbydersKodu")]
-        public IActionResult GetByDersKodu(string Id)
+        public IActionResult GetByDersKodu(string dersKodu)
         {
-            var result = _dersService.GetByDersKodu(Id);
+            var result = _dersService.GetByDersKodu(dersKodu);
             if (result.Success)
             {
                 return Ok(result);

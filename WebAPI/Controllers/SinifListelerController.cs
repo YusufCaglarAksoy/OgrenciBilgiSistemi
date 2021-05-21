@@ -86,9 +86,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getbysubeiid")]
-        public IActionResult GetBySubeiId(int subeiId)
+        public IActionResult GetBySubeiId(int subeId)
         {
-            var result = _sinifListeService.GetBySubeId(subeiId);
+            var result = _sinifListeService.GetBySubeId(subeId);
             if (result.Success)
             {
                 return Ok(result);

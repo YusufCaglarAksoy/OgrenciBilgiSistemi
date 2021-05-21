@@ -76,9 +76,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getbygonderenmail")]
-        public IActionResult GetByGonderenMail(string mail)
+        public IActionResult GetByGonderenMail(string email)
         {
-            var result = _mailService.GetByGonderenMail(mail);
+            var result = _mailService.GetByGonderenMail(email);
             if (result.Success)
             {
                 return Ok(result);
@@ -88,9 +88,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getbyalicimail")]
-        public IActionResult GetByAliciMail(string mail)
+        public IActionResult GetByAliciMail(string email)
         {
-            var result = _mailService.GetByAliciMail(mail);
+            var result = _mailService.GetByAliciMail(email);
             if (result.Success)
             {
                 return Ok(result);

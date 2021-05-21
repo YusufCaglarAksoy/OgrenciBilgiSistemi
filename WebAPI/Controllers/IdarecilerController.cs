@@ -23,9 +23,9 @@ namespace WebAPI.Controllers
         
 
         [HttpPost("add")]
-        public IActionResult Add(IdareciForRegisterDto akademisyen)
+        public IActionResult Add(IdareciForRegisterDto idareci)
         {
-            var result = _idareciService.Add(akademisyen);
+            var result = _idareciService.Add(idareci);
             if (result.Success)
             {
                 return Ok(result);
@@ -45,9 +45,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(IdareciForRegisterDto akademisyen)
+        public IActionResult Update(IdareciForRegisterDto idareci)
         {
-            var result = _idareciService.Update(akademisyen);
+            var result = _idareciService.Update(idareci);
             if (result.Success)
             {
                 return Ok(result);

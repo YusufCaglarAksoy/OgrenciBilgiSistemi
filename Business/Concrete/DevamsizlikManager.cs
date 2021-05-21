@@ -29,7 +29,7 @@ namespace Business.Concrete
         public IResult Delete(int Id)
         {
             Devamsizlik devamsizlik = _devamsizlikDal.Get(d => d.Id == Id);
-            _devamsizlikDal.Add(devamsizlik);
+            _devamsizlikDal.Delete(devamsizlik);
             return new Result(true, Messages.DevamsizlikDeleted);
         }
 
