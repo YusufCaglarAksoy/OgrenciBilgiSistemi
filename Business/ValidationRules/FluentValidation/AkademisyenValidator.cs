@@ -1,9 +1,10 @@
 ﻿using Entities.Concrete;
+using Entities.DTOs;
 using FluentValidation;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class AkademisyenValidator : AbstractValidator<Akademisyen>
+    public class AkademisyenValidator : AbstractValidator<AkademisyenForRegisterDto>
     {
         public AkademisyenValidator()
         {

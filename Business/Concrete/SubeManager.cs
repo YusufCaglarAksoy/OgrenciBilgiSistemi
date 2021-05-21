@@ -26,8 +26,9 @@ namespace Business.Concrete
             return new Result(true, Messages.SubeAdded);
         }
 
-        public IResult Delete(Sube sube)
+        public IResult Delete(int Id)
         {
+            Sube sube = _subeDal.Get(s => s.Id == Id);
             _subeDal.Delete(sube);
             return new Result(true, Messages.SubeDeleted);
         }
@@ -43,18 +44,18 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Sube>>(_subeDal.GetAll(), Messages.SubeListed);
         }
 
-        public IDataResult<Sube> GetById(int Id)
+        public IDataResult<List<SubeDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Sube>(_subeDal.Get(s => s.Id == Id), Messages.SubeGeted);
+            return new SuccessDataResult<List<SubeDetayDto>>(_subeDal.GetSubeDetaylari(s => s.Id == Id), Messages.SubeGeted);
         }
 
-        public IDataResult<List<Sube>> GetByDersId(int dersid)
+        public IDataResult<List<SubeDetayDto>> GetByDersId(int dersid)
         {
-            return new SuccessDataResult<List<Sube>>(_subeDal.GetAll(d => d.DersId == dersid), Messages.SubeListed);
+            return new SuccessDataResult<List<SubeDetayDto>>(_subeDal.GetSubeDetaylari(d => d.DersId == dersid), Messages.SubeListed);
         }
-        public IDataResult<List<Sube>> GetByOgretmenId(int ogretmenid)
+        public IDataResult<List<SubeDetayDto>> GetByOgretmenId(int ogretmenid)
         {
-            return new SuccessDataResult<List<Sube>>(_subeDal.GetAll(m => m.OgretmenId == ogretmenid), Messages.SubeListed);
+            return new SuccessDataResult<List<SubeDetayDto>>(_subeDal.GetSubeDetaylari(m => m.OgretmenId == ogretmenid), Messages.SubeListed);
         }
 
         public IDataResult<List<SubeDetayDto>> GetAllBySubeDto()

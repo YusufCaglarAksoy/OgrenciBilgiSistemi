@@ -5,6 +5,7 @@ namespace Entities.DTOs
 {
     public class IdareciDetayDto : IDto
     {
+        public int Id { get; set; }
         public string Isim { get; set; }
         public string Soyad { get; set; }
         public string EMail { get; set; }
@@ -14,6 +15,10 @@ namespace Entities.DTOs
         public string UnvanAdi { get; set; }
         public string FakulteAdi { get; set; }
         public int SicilNo { get; set; }
+        public int FakulteId { get; set; }
+        public byte[] SaltSifre { get; set; }
+        public byte[] HashSifre { get; set; }
+        public int UnvanId { get; set; }
     }
 
 }

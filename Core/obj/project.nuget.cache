@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Rl0bNhq1zAWn7F4l4i9T7eC/EK2KPRbLfHoxbFK1FeKRIGXPKmKLcTpTagiF6tGHrG9KaQOIVpCI2to2+AxoOA==",
+  "dgSpecHash": "ZeglUvnYTm0Rfe/TIFDSQNcr0d/E97JUkLFfYmU63P4LffD2ChOsDLRRwsey4Rd3DHUtZr0g/xrjagKf9ydonQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mehmet\\Documents\\GitHub\\OgrenciBilgiSistemi\\Core\\Core.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,7 @@
     "C:\\Users\\Mehmet\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\Mehmet\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\Mehmet\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
-    "C:\\Users\\Mehmet\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
+    "C:\\Users\\Mehmet\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512",
     "C:\\Users\\Mehmet\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\Mehmet\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Mehmet\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.3\\microsoft.aspnetcore.http.features.5.0.3.nupkg.sha512",

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -61,5 +62,14 @@ namespace Business.Concrete
             return new SuccessDataResult<OgrenciFotograf>(_ogrenciFotografDal.Get(of => of.OgrenciId == idareciId), Messages.KullaniciFotografGeted);
         }
 
+        private IResult FotografKontrol(int ogrenciId)
+        {
+            var result = _ogrenciFotografDal.GetAll(o => o.OgrenciId == ogrenciId).Count();
+            if (result > 0)
+            {
+                return new ErrorResult("Zaten Fotograf Var");
+            }
+            return new SuccessResult();
+        }
     }
 }

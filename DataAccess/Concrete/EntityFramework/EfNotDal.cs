@@ -23,6 +23,9 @@ namespace DataAccess.Concrete.EntityFramework
                              join st in context.SinavTurleri on s.SinavTurId equals st.Id
                              select new NotDetayDto
                              {
+                                 Id=n.Id,
+                                 SinavId=n.SinavId,
+                                 OgrenciId=n.OgrenciId,
                                  SinavAdi = st.SinavAdi,
                                  DonemAdi = dt.DonemAdi,
                                  DersAdi = d.DersAdi,

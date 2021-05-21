@@ -22,6 +22,9 @@ namespace DataAccess.Concrete.EntityFramework
                              join d in context.Dersler on s.DersId equals d.Id
                              select new SinifListeDetayDto
                              {
+                                 Id=sl.Id,
+                                 OgrenciId=sl.OgrenciId,
+                                 SubeId=sl.SubeId,
                                  OgretmenAdi= a.Isim,
                                  OgretmenSoyadi=a.Soyad,
                                  OgretmenMail =a.EMail,

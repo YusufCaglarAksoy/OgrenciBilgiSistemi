@@ -9,9 +9,9 @@ namespace Business.Abstract
     {
         IResult Add(Mufredat mufredat);
         IResult Update(Mufredat mufredat);
-        IResult Delete(Mufredat mufredat);
+        IResult Delete(int Id);
         IDataResult<List<Mufredat>> GetAll();
-        IDataResult<Mufredat> GetById(int Id);
+        IDataResult<List<MufredatDetayDto>> GetById(int Id);
         IDataResult<List<MufredatDetayDto>> GetAllByMufredatDto();
 
     }

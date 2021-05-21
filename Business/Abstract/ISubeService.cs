@@ -9,11 +9,11 @@ namespace Business.Abstract
     {
         IResult Add(Sube sube);
         IResult Update(Sube sube);
-        IResult Delete(Sube sube);
+        IResult Delete(int Id);
         IDataResult<List<Sube>> GetAll();
-        IDataResult<Sube> GetById(int Id);
-        IDataResult<List<Sube>> GetByOgretmenId(int ogretmenid);
-        IDataResult<List<Sube>> GetByDersId(int dersid);
+        IDataResult<List<SubeDetayDto>> GetById(int Id);
+        IDataResult<List<SubeDetayDto>> GetByOgretmenId(int ogretmenid);
+        IDataResult<List<SubeDetayDto>> GetByDersId(int dersid);
         IDataResult<List<SubeDetayDto>> GetAllBySubeDto();
     }
 }

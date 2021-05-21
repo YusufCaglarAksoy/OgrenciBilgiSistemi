@@ -26,8 +26,9 @@ namespace Business.Concrete
             return new Result(true, Messages.DevamsizlikAdded);
         }
 
-        public IResult Delete(Devamsizlik devamsizlik)
+        public IResult Delete(int Id)
         {
+            Devamsizlik devamsizlik = _devamsizlikDal.Get(d => d.Id == Id);
             _devamsizlikDal.Add(devamsizlik);
             return new Result(true, Messages.DevamsizlikDeleted);
         }
@@ -44,24 +45,24 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Devamsizlik>>(_devamsizlikDal.GetAll(), Messages.DevamsizlikListed);
         }
 
-        public IDataResult<List<Devamsizlik>> GetByDersId(int dersId)
+        public IDataResult<List<DevamsizlikDetayDto>> GetByDersId(int dersId)
         {
-            return new SuccessDataResult<List<Devamsizlik>>(_devamsizlikDal.GetAll(a => a.DersId == dersId), Messages.DevamsizlikGeted);
+            return new SuccessDataResult<List<DevamsizlikDetayDto>>(_devamsizlikDal.GetDevamsizlikDetaylari(a => a.DersId == dersId), Messages.DevamsizlikGeted);
         }
 
-        public IDataResult<List<Devamsizlik>> GetByDevamsizlikDurumu(bool devamsizlikDurumu)
+        public IDataResult<List<DevamsizlikDetayDto>> GetByDevamsizlikDurumu(bool devamsizlikDurumu)
         {
-            return new SuccessDataResult<List<Devamsizlik>>(_devamsizlikDal.GetAll(a => a.DevamsizlikDurumu == devamsizlikDurumu), Messages.DevamsizlikGeted);
+            return new SuccessDataResult<List<DevamsizlikDetayDto>>(_devamsizlikDal.GetDevamsizlikDetaylari(a => a.DevamsizlikDurumu == devamsizlikDurumu), Messages.DevamsizlikGeted);
         }
 
-        public IDataResult<Devamsizlik> GetById(int Id)
+        public IDataResult<List<DevamsizlikDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Devamsizlik>(_devamsizlikDal.Get(a => a.Id == Id), Messages.DevamsizlikGeted);
+            return new SuccessDataResult<List<DevamsizlikDetayDto>>(_devamsizlikDal.GetDevamsizlikDetaylari(a => a.Id==Id), Messages.DevamsizlikGeted);
         }
 
-        public IDataResult<List<Devamsizlik>> GetByOgrenciId(int ogrenciId)
+        public IDataResult<List<DevamsizlikDetayDto>> GetByOgrenciId(int ogrenciId)
         {
-            return new SuccessDataResult<List<Devamsizlik>>(_devamsizlikDal.GetAll(a => a.OgrenciId == ogrenciId), Messages.DevamsizlikGeted);
+            return new SuccessDataResult<List<DevamsizlikDetayDto>>(_devamsizlikDal.GetDevamsizlikDetaylari(a => a.OgrenciId == ogrenciId), Messages.DevamsizlikGeted);
         }
         public IDataResult<List<DevamsizlikDetayDto>> GetAllByDevamsizlikDto()
         {

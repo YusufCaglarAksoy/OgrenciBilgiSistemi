@@ -34,5 +34,12 @@ namespace Entities.DTOs
         public string DanismanTelefonNumarasi { get; set; }
         public string DanismanUnvanAdi { get; set; }
 
+        public int MufredatId { get; set; }
+        public int BolumId { get; set; }
+        public int DanismanId { get; set; }
+        public byte[] SaltSifre { get; set; }
+        public byte[] HashSifre { get; set; }
+        public int UnvanId { get; set; }
+        public int Id { get; set; }
     }
 }

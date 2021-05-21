@@ -26,8 +26,9 @@ namespace Business.Concrete
             return new Result(true, Messages.NotAdded); 
         }
 
-        public IResult Delete(Not not)
+        public IResult Delete(int Id)
         {
+            Not not = _notDal.Get(n => n.Id == Id);
             _notDal.Delete(not);
             return new Result(true, Messages.NotDeleted);
         }
@@ -43,19 +44,19 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Not>>(_notDal.GetAll(), Messages.NotListed);
         }
 
-        public IDataResult<List<Not>> GetByOgrenciId(int ogrenciId)
+        public IDataResult<List<NotDetayDto>> GetByOgrenciId(int ogrenciId)
         {
-            return new SuccessDataResult<List<Not>>(_notDal.GetAll(n => n.OgrenciId == ogrenciId), Messages.NotGeted);
+            return new SuccessDataResult<List<NotDetayDto>>(_notDal.GetNotDetaylari(n => n.OgrenciId == ogrenciId), Messages.NotGeted);
         }
 
-        public IDataResult<List<Not>> GetBySinavId(int sinavId)
+        public IDataResult<List<NotDetayDto>> GetBySinavId(int sinavId)
         {
-            return new SuccessDataResult<List<Not>>(_notDal.GetAll(n => n.SinavId == sinavId), Messages.NotGeted);
+            return new SuccessDataResult<List<NotDetayDto>>(_notDal.GetNotDetaylari(n => n.SinavId == sinavId), Messages.NotGeted);
         }
 
-        public IDataResult<Not> GetById(int Id)
+        public IDataResult<List<NotDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Not>(_notDal.Get(n => n.Id == Id), Messages.NotGeted);
+            return new SuccessDataResult<List<NotDetayDto>>(_notDal.GetNotDetaylari(n => n.Id == Id), Messages.NotGeted);
         }
 
         public IDataResult<List<NotDetayDto>> GetAllByNotDto()

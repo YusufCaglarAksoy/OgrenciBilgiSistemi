@@ -48,7 +48,7 @@ namespace Business.Concrete
 
             if (!result.Success)
             {
-                return new ErrorResult("Hata");
+                return new ErrorResult(result.Message);
             }
 
             _idareciDal.Add(idareci);
@@ -57,7 +57,7 @@ namespace Business.Concrete
 
         public IResult Delete(int sicilNo)
         {
-            var idareci = GetBySicilNo(sicilNo).Data;
+            var idareci = _idareciDal.Get(i => i.SicilNo == sicilNo);
             _idareciDal.Delete(idareci);
             return new Result(true, Messages.IdareciDeleted);
         }
@@ -88,7 +88,7 @@ namespace Business.Concrete
 
             if (!result.Success)
             {
-                return new ErrorResult("Hata");
+                return new ErrorResult(result.Message);
             }
             _idareciDal.Update(idareci);
             return new Result(true, Messages.IdareciUpdated);
@@ -96,7 +96,7 @@ namespace Business.Concrete
 
         public IDataResult<Idareci> Login(LoginDto LoginDto)
         {
-            var idareciKontrol = GetBySicilNo(LoginDto.LoginNo).Data;
+            var idareciKontrol = _idareciDal.Get(i => i.SicilNo == LoginDto.LoginNo);
             if (idareciKontrol == null)
             {
                 return new ErrorDataResult<Idareci>("Kullanıcı bulunamadı");
@@ -109,29 +109,29 @@ namespace Business.Concrete
 
             return new SuccessDataResult<Idareci>(idareciKontrol, "Başarılı giriş");
         }
-        public IDataResult<Idareci> GetById(int Id)
+        public IDataResult<List<IdareciDetayDto>> GetById(int Id)
         {
 
-            return new SuccessDataResult<Idareci>(_idareciDal.Get(a => a.Id == Id), Messages.IdareciGeted);
+            return new SuccessDataResult<List<IdareciDetayDto>>(_idareciDal.GetIdareciDetaylari(a => a.Id == Id), Messages.IdareciGeted);
         }
         public IDataResult<List<Idareci>> GetAll()
         {
             return new SuccessDataResult<List<Idareci>>(_idareciDal.GetAll(), Messages.IdareciListed);
         }
 
-        public IDataResult<Idareci> GetBySicilNo(int sicilNo)
+        public IDataResult<List<IdareciDetayDto>> GetBySicilNo(int sicilNo)
         {
-            return new SuccessDataResult<Idareci>(_idareciDal.Get(i => i.SicilNo == sicilNo), Messages.IdareciGeted);
+            return new SuccessDataResult<List<IdareciDetayDto>>(_idareciDal.GetIdareciDetaylari(i => i.SicilNo == sicilNo), Messages.IdareciGeted);
         }
 
-        public IDataResult<Idareci> GetByEMail(string email)
+        public IDataResult<List<IdareciDetayDto>> GetByEMail(string email)
         {
-            return new SuccessDataResult<Idareci>(_idareciDal.Get(i => i.EMail == email), Messages.IdareciGeted);
+            return new SuccessDataResult<List<IdareciDetayDto>>(_idareciDal.GetIdareciDetaylari(i => i.EMail == email), Messages.IdareciGeted);
         }
 
-        public IDataResult<List<Idareci>> GetByUnvanId(int Id)
+        public IDataResult<List<IdareciDetayDto>> GetByUnvanId(int Id)
         {
-            return new SuccessDataResult<List<Idareci>>(_idareciDal.GetAll(i => i.UnvanId == Id), Messages.IdareciGeted);
+            return new SuccessDataResult<List<IdareciDetayDto>>(_idareciDal.GetIdareciDetaylari(i => i.UnvanId == Id), Messages.IdareciGeted);
         }
 
         public IDataResult<List<IdareciDetayDto>> GetAllByIdareciDto()
@@ -146,7 +146,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu sicil numarasına ait idareci var");
         }
 
         private IResult EmailKontrol(string email)
@@ -157,7 +157,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu emaile ait idareci var");
         }
 
         private IResult TelefeonNoKontrol(string telefonNumarasi)
@@ -168,7 +168,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu telefon numarasına ait idareci var");
         }
 
     }

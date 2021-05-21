@@ -19,6 +19,8 @@ namespace DataAccess.Concrete.EntityFramework
                              join o in context.Ogrenciler on h.OgrenciId equals o.Id
                              select new HarcDetayDto
                              {
+                                 Id=h.Id,
+                                 OgrenciId=h.OgrenciId,
                                  OgrenciAdi = o.Isim,
                                  OgrenciSoyadi = o.Soyad,
                                  OgrenciMail = o.EMail,

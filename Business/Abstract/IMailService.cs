@@ -10,7 +10,7 @@ namespace Business.Abstract
         IDataResult<List<Mail>> GetAll();
         IResult Add(Mail mail);
         IResult Update(Mail mail);
-        IResult Delete(Mail mail);
+        IResult Delete(int Id);
         IDataResult<List<Mail>> GetByAliciMail(string aliciMail);
         IDataResult<List<Mail>> GetByGonderenMail(string gonderenMail);
     }

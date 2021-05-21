@@ -11,7 +11,7 @@
           "Autofac": "6.1.0",
           "Autofac.Extensions.DependencyInjection": "7.1.0",
           "Autofac.Extras.DynamicProxy": "6.0.0",
-          "FluentValidation": "9.5.1",
+          "FluentValidation": "10.1.0",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Features": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.11",
@@ -79,11 +79,11 @@
           }
         }
       },
-      "FluentValidation/9.5.1": {
+      "FluentValidation/10.1.0": {
         "runtime": {
-          "lib/netstandard2.0/FluentValidation.dll": {
+          "lib/netstandard2.1/FluentValidation.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.5.1.0"
+            "fileVersion": "10.1.0.0"
           }
         }
       },
@@ -1184,12 +1184,12 @@
       "path": "castle.core/4.4.0",
       "hashPath": "castle.core.4.4.0.nupkg.sha512"
     },
-    "FluentValidation/9.5.1": {
+    "FluentValidation/10.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-By09e2m4N3giD7Giq8NCFgkgN5Hkm8Lv/bk8AadD9Xc6jjj2WDGrD6l9keZbWbkO9aygiHQREIt47iS2sVSU7w==",
-      "path": "fluentvalidation/9.5.1",
-      "hashPath": "fluentvalidation.9.5.1.nupkg.sha512"
+      "sha512": "sha512-RxhhfY9IcEY2qUMYjoUxegInbuE5Bwll7dVLsXpiJf25g0ztmzUK+HHqtPcub1caPemhMJsC+NwjHei+NgAkvA==",
+      "path": "fluentvalidation/10.1.0",
+      "hashPath": "fluentvalidation.10.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http/2.2.2": {
       "type": "package",

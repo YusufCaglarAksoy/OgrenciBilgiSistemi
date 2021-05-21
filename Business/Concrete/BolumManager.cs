@@ -28,8 +28,9 @@ namespace Business.Concrete
             return new Result(true, Messages.BolumAdded);
         }
 
-        public IResult Delete(Bolum bolum)
+        public IResult Delete(int Id)
         {
+            Bolum bolum = _bolumDal.Get(d=>d.Id==Id);
             _bolumDal.Delete(bolum);
             return new Result(true, Messages.BolumDeleted);
         }
@@ -46,13 +47,13 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Bolum>>(_bolumDal.GetAll(), Messages.BolumListed);
         }
 
-        public IDataResult<Bolum> GetById(int Id)
+        public IDataResult<List<BolumDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Bolum>(_bolumDal.Get(b => b.Id == Id), Messages.BolumGeted);
+            return new SuccessDataResult<List<BolumDetayDto>>(_bolumDal.GetBolumDetaylari(b => b.Id == Id), Messages.BolumGeted);
         }
-        public IDataResult<List<Bolum>> GetByFakulteId(int Id)
+        public IDataResult<List<BolumDetayDto>> GetByFakulteId(int Id)
         {
-            return new SuccessDataResult<List<Bolum>>(_bolumDal.GetAll(b => b.FakulteId == Id), Messages.BolumGeted);
+            return new SuccessDataResult<List<BolumDetayDto>>(_bolumDal.GetBolumDetaylari(b => b.FakulteId == Id), Messages.BolumGeted);
         }
 
         public IDataResult<List<BolumDetayDto>> GetAllByBolumDto()

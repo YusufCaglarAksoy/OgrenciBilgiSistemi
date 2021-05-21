@@ -1,9 +1,10 @@
 ﻿using Entities.Concrete;
+using Entities.DTOs;
 using FluentValidation;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class OgrenciValidator : AbstractValidator<Ogrenci>
+    public class OgrenciValidator : AbstractValidator<OgrenciForRegisterDto>
     {
         public OgrenciValidator()
         {

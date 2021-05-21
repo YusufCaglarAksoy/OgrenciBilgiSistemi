@@ -20,6 +20,11 @@ namespace DataAccess.Concrete.EntityFramework
                              join f in context.Fakulteler on i.FakulteId equals f.Id
                              select new IdareciDetayDto
                              {
+                                Id=i.Id,
+                                UnvanId=i.UnvanId,
+                                FakulteId=i.FakulteId,
+                                HashSifre=i.HashSifre,
+                                SaltSifre=i.SaltSifre,
                                 Isim = i.Isim,
                                 Soyad = i.Soyad,
                                 EMail = i.EMail,
@@ -34,8 +39,4 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
     }
-
-
-
-
 }

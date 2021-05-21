@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
+        [HttpGet("delete")]
         public IActionResult Delete([FromForm(Name = ("Id"))] int Id)
         {
             var kullaniciFotograf = _akademisyenfotografService.GetById(Id).Data;

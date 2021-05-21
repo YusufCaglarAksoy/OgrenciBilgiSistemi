@@ -29,10 +29,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete(SinifListe sinifListe)
+        [HttpGet("delete")]
+        public IActionResult Delete(int Id)
         {
-            var result = _sinifListeService.Delete(sinifListe);
+            var result = _sinifListeService.Delete(Id);
             if (result.Success)
             {
                 return Ok(result);

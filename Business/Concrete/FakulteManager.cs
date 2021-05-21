@@ -27,8 +27,9 @@ namespace Business.Concrete
             return new Result(true, Messages.FakulteAdded);
         }
 
-        public IResult Delete(Fakulte fakulte)
+        public IResult Delete(int Id)
         {
+            Fakulte fakulte = GetById(Id).Data;
             _fakulteDal.Delete(fakulte);
             return new Result(true, Messages.FakulteDeleted);
         }

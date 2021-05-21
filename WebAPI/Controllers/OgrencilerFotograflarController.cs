@@ -32,8 +32,8 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete([FromForm(Name = ("Id"))] int Id)
+        [HttpGet("delete")]
+        public IActionResult Delete(int Id)
         {
             var ogrenciFotograf = _ogrencifotografService.GetById(Id).Data;
             var result = _ogrencifotografService.Delete(ogrenciFotograf);

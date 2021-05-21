@@ -19,31 +19,32 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(MufredatValidator))]
-        public IResult Add(Mufredat mail)
+        public IResult Add(Mufredat mufredat)
         {
-            _mufredatDal.Add(mail);
+            _mufredatDal.Add(mufredat);
             return new Result(true, Messages.MufredatAdded);
         }
 
         [ValidationAspect(typeof(MufredatValidator))]
-        public IResult Update(Mufredat mail)
+        public IResult Update(Mufredat mufredat)
         {
-            _mufredatDal.Update(mail);
+            _mufredatDal.Update(mufredat);
             return new Result(true, Messages.MufredatUpdated);
         }
 
-        public IResult Delete(Mufredat mail)
+        public IResult Delete(int Id)
         {
-            _mufredatDal.Delete(mail);
+            Mufredat mufredat = _mufredatDal.Get(m => m.Id == Id);
+            _mufredatDal.Delete(mufredat);
             return new Result(true, Messages.MufredatDeleted);
         }
         public IDataResult<List<Mufredat>> GetAll()
         {
             return new SuccessDataResult<List<Mufredat>>(_mufredatDal.GetAll(), Messages.MufredatListed);
         }
-        public IDataResult<Mufredat> GetById(int Id)
+        public IDataResult<List<MufredatDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Mufredat>(_mufredatDal.Get(m => m.Id == Id), Messages.MufredatGeted);
+            return new SuccessDataResult<List<MufredatDetayDto>>(_mufredatDal.GetMufredatDetaylari(m => m.Id == Id), Messages.MufredatGeted);
         }
         public IDataResult<List<MufredatDetayDto>> GetAllByMufredatDto()
         {

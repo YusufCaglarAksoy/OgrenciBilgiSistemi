@@ -8,12 +8,12 @@ namespace Business.Abstract
     public interface INotService
     {
         IResult Add(Not not);
-        IResult Delete(Not not);
+        IResult Delete(int Id);
         IResult Update(Not not);
         IDataResult<List<Not>> GetAll();
-        IDataResult<Not> GetById(int Id);
-        IDataResult<List<Not>> GetBySinavId(int sinavId);
-        IDataResult<List<Not>> GetByOgrenciId(int ogrenciId);
+        IDataResult<List<NotDetayDto>> GetById(int Id);
+        IDataResult<List<NotDetayDto>> GetBySinavId(int sinavId);
+        IDataResult<List<NotDetayDto>> GetByOgrenciId(int ogrenciId);
         IDataResult<List<NotDetayDto>> GetAllByNotDto();
     }
 }

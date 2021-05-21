@@ -1,9 +1,10 @@
 ﻿using Entities.Concrete;
+using Entities.DTOs;
 using FluentValidation;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class IdareciValidator : AbstractValidator<Idareci>
+    public class IdareciValidator : AbstractValidator<IdareciForRegisterDto>
     {
         public IdareciValidator()
         {

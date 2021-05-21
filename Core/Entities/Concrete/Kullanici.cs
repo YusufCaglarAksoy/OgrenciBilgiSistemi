@@ -17,7 +17,6 @@ namespace Core.Entities
         public byte[] SaltSifre { get; set; }
         public byte[] HashSifre { get; set; }
         public int UnvanId { get; set; }
-
     }
 }
 

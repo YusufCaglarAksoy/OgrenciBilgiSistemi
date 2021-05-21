@@ -10,11 +10,11 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BolumlerlerController : Controller
+    public class BolumlerController : Controller
     {
         IBolumService _bolumService;
 
-        public BolumlerlerController(IBolumService bolumService)
+        public BolumlerController(IBolumService bolumService)
         {
             _bolumService = bolumService;
         }
@@ -30,10 +30,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete(Bolum bolum)
+        [HttpGet("delete")]
+        public IActionResult Delete(int Id)
         {
-            var result = _bolumService.Delete(bolum);
+            var result = _bolumService.Delete(Id);
             if (result.Success)
             {
                 return Ok(result);

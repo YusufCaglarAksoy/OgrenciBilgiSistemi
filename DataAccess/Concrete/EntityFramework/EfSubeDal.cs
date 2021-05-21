@@ -20,6 +20,9 @@ namespace DataAccess.Concrete.EntityFramework
                              join a in context.Akademisyenler on s.OgretmenId equals a.Id
                              select new SubeDetayDto
                              {
+                                Id=s.Id,
+                                DersId=s.DersId,
+                                OgretmenId=s.OgretmenId,
                                 DersAdi = d.DersAdi,
                                 DersKodu =d.DersKodu,
                                 OgretmenAdi = a.Isim,

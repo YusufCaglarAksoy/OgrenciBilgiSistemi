@@ -161,7 +161,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[9.5.1, )"
+              "version": "[10.1.0, )"
             },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",

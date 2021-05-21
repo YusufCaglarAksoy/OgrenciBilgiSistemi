@@ -30,10 +30,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete(Mufredat mufredat)
+        [HttpGet("delete")]
+        public IActionResult Delete(int Id)
         {
-            var result = _mufredatService.Delete(mufredat);
+            var result = _mufredatService.Delete(Id);
             if (result.Success)
             {
                 return Ok(result);

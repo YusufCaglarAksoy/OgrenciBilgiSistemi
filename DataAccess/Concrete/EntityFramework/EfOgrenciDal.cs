@@ -23,6 +23,13 @@ namespace DataAccess.Concrete.EntityFramework
                              join au in context.Unvanlar on a.UnvanId equals au.Id
                              select new OgrenciDetayDto
                              {
+                                 Id=o.Id,
+                                 BolumId=o.BolumId,
+                                 DanismanId=o.DanismanId,
+                                 MufredatId=o.MufredatId,
+                                 UnvanId=o.UnvanId,
+                                 HashSifre=o.HashSifre,
+                                 SaltSifre=o.SaltSifre,
                                  Isim=o.Isim,
                                  Soyad=o.Soyad,
                                  EMail=o.EMail,

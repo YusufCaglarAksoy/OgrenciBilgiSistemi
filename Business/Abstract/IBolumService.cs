@@ -11,10 +11,10 @@ namespace Business.Abstract
     {
         IResult Add(Bolum bolum);
         IResult Update(Bolum bolum);
-        IResult Delete(Bolum bolum);
+        IResult Delete(int Id);
         IDataResult<List<Bolum>> GetAll();
-        IDataResult<Bolum> GetById(int Id);
-        IDataResult<List<Bolum>> GetByFakulteId(int Id);
+        IDataResult<List<BolumDetayDto>> GetById(int Id);
+        IDataResult<List<BolumDetayDto>> GetByFakulteId(int Id);
         IDataResult<List<BolumDetayDto>> GetAllByBolumDto();
     }
 }

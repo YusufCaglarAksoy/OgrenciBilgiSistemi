@@ -9,12 +9,12 @@ namespace Business.Abstract
     {
         IResult Add(Devamsizlik devamsizlik);
         IResult Update(Devamsizlik devamsizlik);
-        IResult Delete(Devamsizlik devamsizlik);
+        IResult Delete(int Id);
         IDataResult<List<Devamsizlik>> GetAll();
-        IDataResult<Devamsizlik> GetById(int Id);
-        IDataResult<List<Devamsizlik>> GetByOgrenciId(int ogrenciId);
-        IDataResult<List<Devamsizlik>> GetByDersId(int dersId);
-        IDataResult<List<Devamsizlik>> GetByDevamsizlikDurumu(bool devamsizlikDurumu);
+        IDataResult<List<DevamsizlikDetayDto>> GetById(int Id);
+        IDataResult<List<DevamsizlikDetayDto>> GetByOgrenciId(int ogrenciId);
+        IDataResult<List<DevamsizlikDetayDto>> GetByDersId(int dersId);
+        IDataResult<List<DevamsizlikDetayDto>> GetByDevamsizlikDurumu(bool devamsizlikDurumu);
         IDataResult<List<DevamsizlikDetayDto>> GetAllByDevamsizlikDto();
     }
 }

@@ -20,6 +20,9 @@ namespace DataAccess.Concrete.EntityFramework
                              join o in context.Ogrenciler on d.OgrenciId equals o.Id
                              select new DevamsizlikDetayDto
                              {
+                                 Id=d.Id,
+                                 DersId=d.DersId,
+                                 OgrenciId=d.OgrenciId,
                                  OgrenciAdi = o.Isim,
                                  OgrenciSoyadi = o.Soyad,
                                  OgrenciMail = o.EMail,

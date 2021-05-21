@@ -30,10 +30,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete(Mail mail)
+        [HttpGet("delete")]
+        public IActionResult Delete(int Id)
         {
-            var result = _mailService.Delete(mail);
+            var result = _mailService.Delete(Id);
             if (result.Success)
             {
                 return Ok(result);

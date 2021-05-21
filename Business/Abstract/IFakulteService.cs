@@ -10,7 +10,7 @@ namespace Business.Abstract
     {
         IResult Add(Fakulte fakulte);
         IResult Update(Fakulte fakulte);
-        IResult Delete(Fakulte fakulte);
+        IResult Delete(int Id);
         IDataResult<List<Fakulte>> GetAll();
         IDataResult<Fakulte> GetById(int Id);
     }

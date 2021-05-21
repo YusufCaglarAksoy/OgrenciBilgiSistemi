@@ -19,6 +19,8 @@ namespace DataAccess.Concrete.EntityFramework
                              join f in context.Fakulteler on b.FakulteId equals f.Id
                              select new BolumDetayDto
                              {
+                                 Id=b.Id,
+                                 FakulteId=b.FakulteId,
                                  BolumAdi = b.BolumAdi,
                                  FakulteAdi = f.FakulteAdi
                              };

@@ -26,8 +26,9 @@ namespace Business.Concrete
             return new Result(true, Messages.DersAdded);
         }
 
-        public IResult Delete(Ders ders)
+        public IResult Delete(int Id)
         {
+            Ders ders = _dersDal.Get(d => d.Id == Id);
             _dersDal.Delete(ders);
             return new Result(true, Messages.DersDeleted);
         }
@@ -44,14 +45,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Ders>>(_dersDal.GetAll(), Messages.DersListed);
         }
 
-        public IDataResult<Ders> GetById(int Id)
+        public IDataResult<List<DersDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Ders>(_dersDal.Get(d => d.Id == Id), Messages.DersGeted);
+            return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(d => d.Id == Id), Messages.DersGeted);
         }
 
-        public IDataResult<Ders> GetByDersKodu(string Id)
+        public IDataResult<List<DersDetayDto>> GetByDersKodu(string Id)
         {
-            return new SuccessDataResult<Ders>(_dersDal.Get(d => d.DersKodu == Id), Messages.DersGeted);
+            return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(d => d.DersKodu == Id), Messages.DersGeted);
         }
 
         public IDataResult<List<DersDetayDto>> GetAllByDersDto()

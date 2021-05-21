@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -61,5 +62,14 @@ namespace Business.Concrete
             return new SuccessDataResult<IdareciFotograf>(_idareciFotografDal.Get(idf => idf.IdareciId == idareciId), Messages.KullaniciFotografGeted);
         }
 
+        private IResult FotografKontrol(int idareciId)
+        {
+            var result = _idareciFotografDal.GetAll(i => i.IdareciId == idareciId).Count();
+            if (result > 0)
+            {
+                return new ErrorResult("Zaten Fotograf Var");
+            }
+            return new SuccessResult();
+        }
     }
 }

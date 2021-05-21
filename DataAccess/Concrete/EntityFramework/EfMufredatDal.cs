@@ -20,6 +20,8 @@ namespace DataAccess.Concrete.EntityFramework
                              join dt in context.Donemler on d.DonemId equals dt.Id
                              select new MufredatDetayDto
                              {
+                                 Id=m.Id,
+                                 DersId=m.DersId,
                                  DonemAdi=dt.DonemAdi,
                                  MufredatId = m.MufredatId,
                                  DersAdi = d.DersAdi,

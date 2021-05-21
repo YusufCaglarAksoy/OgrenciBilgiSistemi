@@ -21,13 +21,16 @@ namespace DataAccess.Concrete.EntityFramework
                              join dt in context.Donemler on d.DonemId equals dt.Id
                              select new DersDetayDto
                              {
+                                 Id=d.Id,
+                                 BolumId=d.BolumId,
+                                 DonemId=d.DonemId,
                                  DonemAdi = dt.DonemAdi,
                                  DersKodu = d.DersKodu,
                                  DersAdi = d.DersAdi,
                                  Sinif = d.Sinif,
                                  BolumAdi = b.BolumAdi,
                                  FakulteAdi = f.FakulteAdi
-
+                                 
                              };
                 return result.ToList();
             }

@@ -32,10 +32,10 @@ namespace WebAPI.Controllers
                 return BadRequest(result);
             }
 
-            [HttpPost("delete")]
-            public IActionResult Delete(Devamsizlik devamsizlik)
+            [HttpGet("delete")]
+            public IActionResult Delete(int Id)
             {
-                var result = _devamsizlikService.Delete(devamsizlik);
+                var result = _devamsizlikService.Delete(Id);
                 if (result.Success)
                 {
                     return Ok(result);
@@ -101,7 +101,7 @@ namespace WebAPI.Controllers
 
             }
 
-            [HttpGet("getbyid")]
+            [HttpGet("getbydevamsizlikdurumu")]
             public IActionResult GetByDevamsizlikDurumu(bool devamsizlikDurumu)
             {
                 var result = _devamsizlikService.GetByDevamsizlikDurumu(devamsizlikDurumu);

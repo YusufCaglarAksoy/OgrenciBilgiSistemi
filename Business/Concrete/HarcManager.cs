@@ -26,8 +26,9 @@ namespace Business.Concrete
             return new Result(true, Messages.HarcAdded);
         }
 
-        public IResult Delete(Harc harc)
+        public IResult Delete(int Id)
         {
+            Harc harc = _harcDal.Get(h => h.Id == Id);
             _harcDal.Add(harc);
             return new Result(true, Messages.HarcDeleted);
         }
@@ -44,14 +45,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Harc>>(_harcDal.GetAll(), Messages.HarcListed);
         }
 
-        public IDataResult<Harc> GetById(int Id)
+        public IDataResult<List<HarcDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Harc>(_harcDal.Get(h => h.Id == Id), Messages.HarcGeted);
+            return new SuccessDataResult<List<HarcDetayDto>>(_harcDal.GetHarcDetaylari(h => h.Id == Id), Messages.HarcGeted);
         }
 
-        public IDataResult<Harc> GetByOgrenciId(int Id)
+        public IDataResult<List<HarcDetayDto>> GetByOgrenciId(int Id)
         {
-            return new SuccessDataResult<Harc>(_harcDal.Get(h => h.OgrenciId == Id), Messages.HarcGeted);
+            return new SuccessDataResult<List<HarcDetayDto>>(_harcDal.GetHarcDetaylari(h => h.OgrenciId == Id), Messages.HarcGeted);
         }
 
         public IDataResult<List<HarcDetayDto>> GetAllByHarcDto()

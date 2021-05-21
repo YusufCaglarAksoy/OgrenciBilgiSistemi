@@ -15,7 +15,6 @@ namespace Entities.DTOs
         public string TelefonNumarasi { get; set; }
         public string Sifre { get; set; }
         public int UnvanId { get; set; }
-        public int FotografId { get; set; }
 
     }
 }

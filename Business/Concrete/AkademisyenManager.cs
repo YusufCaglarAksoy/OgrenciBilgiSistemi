@@ -23,7 +23,6 @@ namespace Business.Concrete
             _akademisyenDal = akademisyenDal;
         }
 
-        [ValidationAspect(typeof(AkademisyenValidator))]
         public IResult Add(AkademisyenForRegisterDto akademisyenForRegisterDto)
         {
             byte[] passwordHash, passwordSalt;
@@ -49,7 +48,7 @@ namespace Business.Concrete
 
             if (!result.Success)
             {
-                return new ErrorResult("Hata");
+                return new ErrorResult(result.Message);
             }
 
             _akademisyenDal.Add(akademisyen);
@@ -58,7 +57,7 @@ namespace Business.Concrete
 
         public IResult Delete(int sicilNo)
         {
-            var akademisyen = GetBySicilNo(sicilNo).Data;
+            var akademisyen = _akademisyenDal.Get(a => a.SicilNo == sicilNo);
             _akademisyenDal.Delete(akademisyen);
             return new Result(true, Messages.AkademisyenDeleted);
         }
@@ -89,7 +88,7 @@ namespace Business.Concrete
 
             if (!result.Success)
             {
-                return new ErrorResult("Hata");
+                return new ErrorResult(result.Message);
             }
             _akademisyenDal.Update(akademisyen);
             return new Result(true, Messages.AkademisyenUpdated);
@@ -97,7 +96,7 @@ namespace Business.Concrete
 
         public IDataResult<Akademisyen> Login(LoginDto LoginDto)
         {
-            var akademisyenKontrol = GetBySicilNo(LoginDto.LoginNo).Data;
+            var akademisyenKontrol = _akademisyenDal.Get(a=>a.SicilNo==LoginDto.LoginNo);
             if (akademisyenKontrol == null)
             {
                 return new ErrorDataResult<Akademisyen>("Kullanıcı bulunamadı");
@@ -114,29 +113,29 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(), Messages.AkademisyenListed);
         }
 
-        public IDataResult<List<Akademisyen>> GetByBolumId(int Id)
+        public IDataResult<List<AkademisyenDetayDto>> GetByBolumId(int Id)
         {
-            return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(a => a.BolumId == Id), Messages.AkademisyenGeted);
+            return new SuccessDataResult<List<AkademisyenDetayDto>>(_akademisyenDal.GetAkademisyenDetaylari(a => a.BolumId == Id), Messages.AkademisyenGeted);
         }
 
-        public IDataResult<Akademisyen> GetBySicilNo(int sicilNo)
+        public IDataResult<List<AkademisyenDetayDto>> GetBySicilNo(int sicilNo)
         {
-            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a => a.SicilNo == sicilNo), Messages.AkademisyenGeted);
+            return new SuccessDataResult<List<AkademisyenDetayDto>>(_akademisyenDal.GetAkademisyenDetaylari(a => a.SicilNo == sicilNo), Messages.AkademisyenGeted);
 
         }
 
-        public IDataResult<Akademisyen> GetByEMail(string email)
+        public IDataResult<List<AkademisyenDetayDto>> GetByEMail(string email)
         {
-            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a => a.EMail == email), Messages.AkademisyenGeted);
+            return new SuccessDataResult<List<AkademisyenDetayDto>>(_akademisyenDal.GetAkademisyenDetaylari(a => a.EMail == email), Messages.AkademisyenGeted);
         }
 
-        public IDataResult<List<Akademisyen>> GetByUnvanId(int Id)
+        public IDataResult<List<AkademisyenDetayDto>> GetByUnvanId(int Id)
         {
-            return new SuccessDataResult<List<Akademisyen>>(_akademisyenDal.GetAll(a => a.UnvanId == Id), Messages.AkademisyenGeted);
+            return new SuccessDataResult<List<AkademisyenDetayDto>>(_akademisyenDal.GetAkademisyenDetaylari(a => a.UnvanId == Id), Messages.AkademisyenGeted);
         }
-        public IDataResult<Akademisyen> GetById(int bolumId)
+        public IDataResult<List<AkademisyenDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Akademisyen>(_akademisyenDal.Get(a => a.Id == bolumId), Messages.AkademisyenGeted);
+            return new SuccessDataResult<List<AkademisyenDetayDto>>(_akademisyenDal.GetAkademisyenDetaylari(a => a.Id == Id), Messages.AkademisyenGeted);
         }
 
         public IDataResult<List<AkademisyenDetayDto>> GetAllByAkademisyenDto()
@@ -152,7 +151,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu sicil numarasına ait akademisyen var");
         }
 
         private IResult EmailKontrol(string email)
@@ -163,7 +162,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu sicil emaile ait akademisyen var");
         }
 
         private IResult TelefeonNoKontrol(string telefonNumarasi)
@@ -174,7 +173,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu telefon numarasına ait akademisyen var");
         }
     }
 

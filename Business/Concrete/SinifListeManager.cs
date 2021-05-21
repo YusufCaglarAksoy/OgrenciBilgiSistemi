@@ -26,8 +26,9 @@ namespace Business.Concrete
             _sinifListeDal.Add(sinifListe);
             return new Result(true, Messages.SinifListeAdded);
         }
-        public IResult Delete(SinifListe sinifListe)
+        public IResult Delete(int Id)
         {
+            SinifListe sinifListe = _sinifListeDal.Get(sl => sl.Id == Id);
             _sinifListeDal.Delete(sinifListe);
             return new Result(true, Messages.SinifListeDeleted);
         }
@@ -42,18 +43,18 @@ namespace Business.Concrete
             return new SuccessDataResult<List<SinifListe>>(_sinifListeDal.GetAll(), Messages.SinifListeListed);
         }
 
-        public IDataResult<List<SinifListe>> GetBySubeId(int Id)
+        public IDataResult<List<SinifListeDetayDto>> GetBySubeId(int Id)
         {
-            return new SuccessDataResult<List<SinifListe>>(_sinifListeDal.GetAll(s => s.SubeId == Id), Messages.SinifListeGeted);
+            return new SuccessDataResult<List<SinifListeDetayDto>>(_sinifListeDal.GetSinifListeDetaylari(s => s.SubeId == Id), Messages.SinifListeGeted);
         }
 
-        public IDataResult<List<SinifListe>> GetByOgrenciId(int Id)
+        public IDataResult<List<SinifListeDetayDto>> GetByOgrenciId(int Id)
         {
-            return new SuccessDataResult<List<SinifListe>>(_sinifListeDal.GetAll(a => a.OgrenciId == Id), Messages.SinifListeGeted);
+            return new SuccessDataResult<List<SinifListeDetayDto>>(_sinifListeDal.GetSinifListeDetaylari(a => a.OgrenciId == Id), Messages.SinifListeGeted);
         }
-        public IDataResult<SinifListe> GetById(int Id)
+        public IDataResult<List<SinifListeDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<SinifListe>(_sinifListeDal.Get(s => s.Id == Id), Messages.SinifListeGeted);
+            return new SuccessDataResult<List<SinifListeDetayDto>>(_sinifListeDal.GetSinifListeDetaylari(s => s.Id == Id), Messages.SinifListeGeted);
         }
         public IDataResult<List<SinifListeDetayDto>> GetAllBySinifListeDto()
         {

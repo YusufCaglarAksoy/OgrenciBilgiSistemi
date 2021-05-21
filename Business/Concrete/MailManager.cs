@@ -43,8 +43,9 @@ namespace Business.Concrete
             return new Result(true, Messages.MailUpdated);
         }
 
-        public IResult Delete(Mail mail)
+        public IResult Delete(int Id)
         {
+            Mail mail = GetById(Id).Data;
             _mailDal.Delete(mail);
             return new Result(true, Messages.MailDeleted);
         }

@@ -5,6 +5,9 @@ namespace Entities.DTOs
 {
     public class NotDetayDto : IDto
     {
+        public int Id { get; set; }
+        public int SinavId { get; set; }
+        public int OgrenciId { get; set; }
         public string SinavAdi { get; set; }
         public string DonemAdi { get; set; }
         public string DersAdi { get; set; }

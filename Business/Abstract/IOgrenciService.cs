@@ -12,11 +12,11 @@ namespace Business.Abstract
         IResult Delete(int Id);
         IDataResult<Ogrenci> Login(LoginDto LoginDto);
         IDataResult<List<Ogrenci>> GetAll();
-        IDataResult<Ogrenci> GetByOgrenciNo(int ogrenciNo);
-        IDataResult<Ogrenci> GetById(int Id);
-        IDataResult<List<Ogrenci>> GetByBolumId(int Id);
-        IDataResult<List<Ogrenci>> GetByDanismanId(int Id);
-        IDataResult<Ogrenci> GetByEMail(string email);
+        IDataResult<List<OgrenciDetayDto>> GetByOgrenciNo(int ogrenciNo);
+        IDataResult<List<OgrenciDetayDto>> GetById(int Id);
+        IDataResult<List<OgrenciDetayDto>> GetByBolumId(int Id);
+        IDataResult<List<OgrenciDetayDto>> GetByDanismanId(int Id);
+        IDataResult<List<OgrenciDetayDto>> GetByEMail(string email);
         IDataResult<List<OgrenciDetayDto>> GetAllByOgrenciDto();
 
     }

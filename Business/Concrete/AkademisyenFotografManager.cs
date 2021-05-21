@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Core.Utilities.Business;
 using Core.Utilities.FileHelper;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -22,7 +24,12 @@ namespace Business.Concrete
 
         public IResult Add(IFormFile file,AkademisyenFotograf akademisyenFotograf)
         {
-            ;
+            var result = BusinessRules.Run(FotografKontrol(akademisyenFotograf.AkademisyenId));
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
+
             akademisyenFotograf.FotografYolu = FileHelper.Add(file, "Akademisyen");
             akademisyenFotograf.Tarih = DateTime.Now;
             _akademisyenFotografDal.Add(akademisyenFotograf);
@@ -41,6 +48,7 @@ namespace Business.Concrete
         {
 
             akademisyenFotograf.FotografYolu = FileHelper.Update(_akademisyenFotografDal.Get(k => k.Id == akademisyenFotograf.Id).FotografYolu, file, "Akademisyen");
+
             _akademisyenFotografDal.Update(akademisyenFotograf);
             return new SuccessResult(Messages.KullaniciFotografUpdated);
         }
@@ -59,6 +67,16 @@ namespace Business.Concrete
         public IDataResult<AkademisyenFotograf> GetByAkademisyenId(int akademisyenId)
         {
             return new SuccessDataResult<AkademisyenFotograf>(_akademisyenFotografDal.Get(af => af.AkademisyenId == akademisyenId), Messages.KullaniciFotografGeted);
+        }
+
+        private IResult FotografKontrol(int akademisyenId)
+        {
+            var result = _akademisyenFotografDal.GetAll(af => af.AkademisyenId == akademisyenId).Count();
+            if (result > 0)
+            {
+                return new ErrorResult("Zaten Fotograf Var");
+            }
+            return new SuccessResult();
         }
     }
 }

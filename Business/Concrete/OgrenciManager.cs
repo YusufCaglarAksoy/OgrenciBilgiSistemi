@@ -58,7 +58,7 @@ namespace Business.Concrete
 
             if (!result.Success)
             {
-                return new ErrorResult("Hata");
+                return new ErrorResult(result.Message);
             }
 
             _ogrenciDal.Add(ogrenci);
@@ -67,7 +67,7 @@ namespace Business.Concrete
 
         public IResult Delete(int ogrenciNo)
         {
-            var ogrenci = GetByOgrenciNo(ogrenciNo).Data;
+            var ogrenci = _ogrenciDal.Get(o => o.OgrenciNo == ogrenciNo);
             _ogrenciDal.Delete(ogrenci);
             return new Result(true, Messages.OgrenciDeleted); 
         }
@@ -108,7 +108,7 @@ namespace Business.Concrete
 
             if (!result.Success)
             {
-                return new ErrorResult("Hata");
+                return new ErrorResult(result.Message);
             }
 
             _ogrenciDal.Update(ogrenci);
@@ -117,7 +117,7 @@ namespace Business.Concrete
 
         public IDataResult<Ogrenci> Login(LoginDto LoginDto)
         {
-            var ogrenciKontrol = GetByOgrenciNo(LoginDto.LoginNo).Data;
+            var ogrenciKontrol = _ogrenciDal.Get(o => o.OgrenciNo == LoginDto.LoginNo);
             if (ogrenciKontrol == null)
             {
                 return new ErrorDataResult<Ogrenci>("Kullanıcı bulunamadı");
@@ -136,29 +136,29 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Ogrenci>>(_ogrenciDal.GetAll(), Messages.OgrenciListed); 
         }
 
-        public IDataResult<Ogrenci> GetByOgrenciNo(int ogrenciNo)
+        public IDataResult<List<OgrenciDetayDto>> GetByOgrenciNo(int ogrenciNo)
         {
-            return new SuccessDataResult<Ogrenci>(_ogrenciDal.Get(o => o.OgrenciNo == ogrenciNo), Messages.OgrenciGeted); 
+            return new SuccessDataResult<List<OgrenciDetayDto>>(_ogrenciDal.GetOgrenciDetaylari(o => o.OgrenciNo == ogrenciNo), Messages.OgrenciGeted); 
         }
 
-        public IDataResult<List<Ogrenci>> GetByBolumId(int Id)
+        public IDataResult<List<OgrenciDetayDto>> GetByBolumId(int Id)
         {
-            return new SuccessDataResult<List<Ogrenci>>(_ogrenciDal.GetAll(o => o.BolumId == Id), Messages.OgrenciGeted);
+            return new SuccessDataResult<List<OgrenciDetayDto>>(_ogrenciDal.GetOgrenciDetaylari(o => o.BolumId == Id), Messages.OgrenciGeted);
         }
 
-        public IDataResult<List<Ogrenci>> GetByDanismanId(int Id)
+        public IDataResult<List<OgrenciDetayDto>> GetByDanismanId(int Id)
         {
-            return new SuccessDataResult<List<Ogrenci>>(_ogrenciDal.GetAll(o => o.DanismanId == Id), Messages.OgrenciGeted);
+            return new SuccessDataResult<List<OgrenciDetayDto>>(_ogrenciDal.GetOgrenciDetaylari(o => o.DanismanId == Id), Messages.OgrenciGeted);
         }
 
-        public IDataResult<Ogrenci> GetByEMail(string email)
+        public IDataResult<List<OgrenciDetayDto>> GetByEMail(string email)
         {
-            return new SuccessDataResult<Ogrenci>(_ogrenciDal.Get(o => o.EMail == email), Messages.OgrenciGeted);
+            return new SuccessDataResult<List<OgrenciDetayDto>>(_ogrenciDal.GetOgrenciDetaylari(o => o.EMail == email), Messages.OgrenciGeted);
         }
 
-        public IDataResult<Ogrenci> GetById(int Id)
+        public IDataResult<List<OgrenciDetayDto>> GetById(int Id)
         {
-            return new SuccessDataResult<Ogrenci>(_ogrenciDal.Get(o => o.Id == Id), Messages.OgrenciGeted);
+            return new SuccessDataResult<List<OgrenciDetayDto>>(_ogrenciDal.GetOgrenciDetaylari(o => o.Id == Id), Messages.OgrenciGeted);
         }
 
         public IDataResult<List<OgrenciDetayDto>> GetAllByOgrenciDto()
@@ -174,7 +174,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu ogrenci numarasına ait ogrenci var");
         }
 
         private IResult EmailKontrol(string email)
@@ -185,7 +185,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu emaile ait ogrenci var");
         }
 
         private IResult TelefeonNoKontrol(string telefonNumarasi)
@@ -196,7 +196,7 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
 
-            return new ErrorResult();
+            return new ErrorResult("Bu telefon numarasına ait ogrenci var");
         }
     }
 
