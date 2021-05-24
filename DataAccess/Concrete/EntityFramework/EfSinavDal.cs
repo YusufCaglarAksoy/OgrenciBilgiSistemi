@@ -20,12 +20,14 @@ namespace DataAccess.Concrete.EntityFramework
                              join st in context.SinavTurleri on s.SinavTurId equals st.Id
                              select new SinavDetayDto
                              {
-                                 Id=s.Id,
-                                 SinavTurId=s.SinavTurId,
-                                 DersId=s.DersId,
+                                 Id = s.Id,
+                                 SinavTurId = s.SinavTurId,
+                                 DersId = s.DersId,
                                  SinavAdi = st.SinavAdi,
                                  SinavTarihi = s.SinavTarihi,
-                                 DersAdi = d.DersAdi
+                                 DersAdi = d.DersAdi,
+                                 DersKodu = d.DersKodu,
+                                 AkademisyenId = s.AkademisyenId
                              };
                 return result.ToList();
             }

@@ -14,10 +14,11 @@ namespace WebAPI.Controllers
     public class IdarecilerController : Controller
     {
         IIdareciService _idareciService;
-
-        public IdarecilerController(IIdareciService idareciService)
+        IUserService _userService;
+        public IdarecilerController(IIdareciService idareciService, IUserService userService)
         {
             _idareciService = idareciService;
+            _userService = userService;
         }
 
         
@@ -58,7 +59,13 @@ namespace WebAPI.Controllers
         [HttpPost("login")]
         public IActionResult Login(LoginDto loginDto)
         {
-            var result = _idareciService.Login(loginDto);
+            var userToLogin = _idareciService.Login(loginDto);
+            if (!userToLogin.Success)
+            {
+                return BadRequest(userToLogin.Message);
+            }
+
+            var result = _userService.CreateAccessToken(userToLogin.Data);
             if (result.Success)
             {
                 return Ok(result);

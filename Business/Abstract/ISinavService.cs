@@ -14,6 +14,7 @@ namespace Business.Abstract
         IResult Delete(int Id);
         IDataResult<List<Sinav>> GetAll();
         IDataResult<List<SinavDetayDto>> GetById(int Id);
+        IDataResult<List<SinavDetayDto>> GetByAkademisyenId(int Id);
         IDataResult<List<SinavDetayDto>> GetAllBySinavDto();
     }
 }

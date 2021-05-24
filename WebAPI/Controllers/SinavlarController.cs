@@ -74,6 +74,18 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpGet("getbyakademisyenid")]
+        public IActionResult GetByAkademisyenId(int Id)
+        {
+            var result = _sinavService.GetByAkademisyenId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpGet("getsinavDetaylari")]
         public IActionResult GetAllBySinavDto()
         {

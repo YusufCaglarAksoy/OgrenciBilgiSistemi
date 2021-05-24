@@ -14,10 +14,13 @@ namespace Business.Concrete
     public class SinavManager : ISinavService
     {
         ISinavDal _sinavDal;
+        ISubeDal _subeDal;
 
-        public SinavManager(ISinavDal sinavDal)
+        public SinavManager(ISinavDal sinavDal, ISubeDal subeDal)
         {
             _sinavDal = sinavDal;
+            _subeDal = subeDal;
+
         }
 
         [ValidationAspect(typeof(SinavValidator))]
@@ -55,5 +58,11 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<SinavDetayDto>>(_sinavDal.GetSinavDetaylari(), Messages.SinavListed);
         }
+
+        public IDataResult<List<SinavDetayDto>> GetByAkademisyenId(int Id)
+        {
+            return new SuccessDataResult<List<SinavDetayDto>>(_sinavDal.GetSinavDetaylari(s => s.AkademisyenId==Id), Messages.SinavGeted);
+        }
+
     }
 }

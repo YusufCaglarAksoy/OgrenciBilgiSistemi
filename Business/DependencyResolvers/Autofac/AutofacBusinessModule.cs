@@ -4,6 +4,7 @@ using Business.Abstract;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
+using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Http;
@@ -65,6 +66,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<IdareciManager>().As<IIdareciService>().SingleInstance();
             builder.RegisterType<EfIdareciDal>().As<IIdareciDal>().SingleInstance();
 
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
 
 

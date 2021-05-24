@@ -11,6 +11,8 @@ namespace Entities.DTOs
         public DateTime SinavTarihi { get; set; }
         public string DersAdi { get; set; }
         public int DersId { get; set; }
+        public string DersKodu { get; set; }
+        public int AkademisyenId { get; set; }
     }
 
 }

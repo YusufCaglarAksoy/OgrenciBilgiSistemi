@@ -11,5 +11,6 @@ namespace Entities.Concrete
         public int SinavTurId { get; set; }
         public DateTime SinavTarihi { get; set; }
         public int DersId { get; set; }
+        public int AkademisyenId { get; set; }
     }
 }

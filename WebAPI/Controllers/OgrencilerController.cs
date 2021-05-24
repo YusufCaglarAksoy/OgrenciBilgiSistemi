@@ -14,10 +14,11 @@ namespace WebAPI.Controllers
     public class OgrencilerController : ControllerBase
     {
         IOgrenciService _ogrenciService;
-
-        public OgrencilerController(IOgrenciService ogrenciService)
+        IUserService _userService;
+        public OgrencilerController(IOgrenciService ogrenciService, IUserService userService)
         {
             _ogrenciService = ogrenciService;
+            _userService = userService;
         }
 
         [HttpPost("add")]
@@ -56,11 +57,18 @@ namespace WebAPI.Controllers
         [HttpPost("login")]
         public IActionResult Login(LoginDto loginDto)
         {
-            var result = _ogrenciService.Login(loginDto);
+            var userToLogin = _ogrenciService.Login(loginDto);
+            if (!userToLogin.Success)
+            {
+                return BadRequest(userToLogin.Message);
+            }
+
+            var result = _userService.CreateAccessToken(userToLogin.Data);
             if (result.Success)
             {
                 return Ok(result);
             }
+
             return BadRequest(result);
         }
 
