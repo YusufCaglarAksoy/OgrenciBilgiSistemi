@@ -74,3 +74,4 @@ C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\bin\Debug\netcoreapp
 C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\bin\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
