@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public string Turu { get; set; }
         public DateTime TahakkukTarihi { get; set; }
         public DateTime OdemeTarihi { get; set; }
-        public double Tutar { get; set; }
+        public Decimal Tutar { get; set; }
         
     }
 }
