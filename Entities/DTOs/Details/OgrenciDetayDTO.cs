@@ -41,5 +41,6 @@ namespace Entities.DTOs
         public byte[] HashSifre { get; set; }
         public int UnvanId { get; set; }
         public int Id { get; set; }
+        public string FotografYolu { get; set; }
     }
 }

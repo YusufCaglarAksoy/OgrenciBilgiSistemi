@@ -18,6 +18,7 @@ namespace DataAccess.Concrete.EntityFramework
                 var result = from i in filter == null ? context.Idareciler : context.Set<Idareci>().Where(filter)
                              join u in context.Unvanlar on i.UnvanId equals u.Id
                              join f in context.Fakulteler on i.FakulteId equals f.Id
+                             join ifo in context.IdareciFotograflar on i.Id equals ifo.IdareciId
                              select new IdareciDetayDto
                              {
                                 Id=i.Id,
@@ -33,7 +34,8 @@ namespace DataAccess.Concrete.EntityFramework
                                 TelefonNumarasi = i.TelefonNumarasi,
                                 UnvanAdi = u.UnvanAdi,
                                 FakulteAdi = f.FakulteAdi,
-                                SicilNo = i.SicilNo
+                                SicilNo = i.SicilNo,
+                                fotografYolu = ifo.FotografYolu
                              };
                 return result.ToList();
             }

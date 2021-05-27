@@ -19,6 +19,7 @@ namespace DataAccess.Concrete.EntityFramework
                              join u in context.Unvanlar on a.UnvanId equals u.Id
                              join b in context.Bolumler on a.BolumId equals b.Id
                              join f in context.Fakulteler on b.FakulteId equals f.Id
+                             join af in context.AkademisyenFotograflar on a.Id equals af.AkademisyenId
                              select new AkademisyenDetayDto
                              {
                                  Id = a.Id,
@@ -36,6 +37,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  FakulteAdi = f.FakulteAdi,
                                  SicilNo = a.SicilNo,
                                  BolumAdi = b.BolumAdi,
+                                 fotografYolu = af.FotografYolu
                              };
                 return result.ToList();
             }

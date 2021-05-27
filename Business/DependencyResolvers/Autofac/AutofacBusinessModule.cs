@@ -24,6 +24,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<DersManager>().As<IDersService>().SingleInstance();
             builder.RegisterType<EfDersDal>().As<IDersDal>().SingleInstance();
 
+            builder.RegisterType<DersKayitManager>().As<IDersKayitService>().SingleInstance();
+            builder.RegisterType<EfDersKayitDal>().As<IDersKayitDal>().SingleInstance();
+
             builder.RegisterType<DevamsizlikManager>().As<IDevamsizlikService>().SingleInstance();
             builder.RegisterType<EfDevamsizlikDal>().As<IDevamsizlikDal>().SingleInstance();
 

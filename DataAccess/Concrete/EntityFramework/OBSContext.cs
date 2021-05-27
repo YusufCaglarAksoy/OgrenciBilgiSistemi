@@ -31,5 +31,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Donem> Donemler { get; set; }
         public DbSet<SinavTur> SinavTurleri { get; set; }
         public DbSet<Sube> Subeler { get; set; }
+        public DbSet<DersKayit> DersKayitlar { get; set; }
     }
 }

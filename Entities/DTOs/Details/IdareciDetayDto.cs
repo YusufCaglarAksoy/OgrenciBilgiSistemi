@@ -19,6 +19,7 @@ namespace Entities.DTOs
         public byte[] SaltSifre { get; set; }
         public byte[] HashSifre { get; set; }
         public int UnvanId { get; set; }
+        public string fotografYolu { get; set; }
     }
 
 }

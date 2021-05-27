@@ -59,5 +59,10 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(), Messages.DersListed);
         }
+
+        public IDataResult<List<DersDetayDto>> GetByDonemId(int Id)
+        {
+            return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(d => d.DonemId == Id), Messages.DersGeted);
+        }
     }
 }

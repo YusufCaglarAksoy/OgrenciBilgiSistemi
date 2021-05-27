@@ -21,6 +21,7 @@ namespace DataAccess.Concrete.EntityFramework
                              join f in context.Fakulteler on b.FakulteId equals f.Id
                              join a in context.Akademisyenler on o.DanismanId equals a.Id
                              join au in context.Unvanlar on a.UnvanId equals au.Id
+                             join fo in context.OgrenciFotograflar on o.Id equals fo.OgrenciId
                              select new OgrenciDetayDto
                              {
                                  Id=o.Id,
@@ -52,7 +53,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  DanismanSoyadi=a.Soyad,
                                  DanismanEMail=a.EMail,
                                  DanismanTelefonNumarasi=a.TelefonNumarasi,
-                                 DanismanUnvanAdi=au.UnvanAdi
+                                 DanismanUnvanAdi=au.UnvanAdi,
+                                 FotografYolu = fo.FotografYolu
                              };
                 return result.ToList();
             }

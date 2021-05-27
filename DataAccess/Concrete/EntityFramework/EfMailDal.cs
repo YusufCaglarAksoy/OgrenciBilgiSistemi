@@ -8,8 +8,4 @@ namespace DataAccess.Concrete.EntityFramework
     {
 
     }
-
-
-
-
 }

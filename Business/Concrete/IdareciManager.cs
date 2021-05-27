@@ -22,7 +22,6 @@ namespace Business.Concrete
             _idareciDal = idareciDal;
         }
 
-        [ValidationAspect(typeof(IdareciValidator))]
         public IResult Add(IdareciForRegisterDto idareciForRegisterDto)
         {
             byte[] passwordHash, passwordSalt;

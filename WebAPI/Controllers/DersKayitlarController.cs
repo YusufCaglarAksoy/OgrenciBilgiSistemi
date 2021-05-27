@@ -6,24 +6,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DerslerController : ControllerBase
+    public class DersKayitlarController:Controller
     {
-        IDersService _dersService;
+        IDersKayitService _dersKayitService;
 
-        public DerslerController(IDersService dersService)
+        public DersKayitlarController(IDersKayitService dersKayit)
         {
-            _dersService = dersService;
+            _dersKayitService = dersKayit;
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Ders ders)
+        public IActionResult Add(DersKayit dersKayit)
         {
-            var result = _dersService.Add(ders);
+            var result = _dersKayitService.Add(dersKayit);
             if (result.Success)
             {
                 return Ok(result);
@@ -34,7 +33,7 @@ namespace WebAPI.Controllers
         [HttpGet("delete")]
         public IActionResult Delete(int Id)
         {
-            var result = _dersService.Delete(Id);
+            var result = _dersKayitService.Delete(Id);
             if (result.Success)
             {
                 return Ok(result);
@@ -43,9 +42,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Ders ders)
+        public IActionResult Update(DersKayit dersKayit)
         {
-            var result = _dersService.Update(ders);
+            var result = _dersKayitService.Update(dersKayit);
             if (result.Success)
             {
                 return Ok(result);
@@ -56,7 +55,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _dersService.GetAll();
+            var result = _dersKayitService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -67,7 +66,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int Id)
         {
-            var result = _dersService.GetById(Id);
+            var result = _dersKayitService.GetById(Id);
             if (result.Success)
             {
                 return Ok(result);
@@ -76,10 +75,10 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpGet("getbydersKodu")]
-        public IActionResult GetByDersKodu(string dersKodu)
+        [HttpGet("getbyogrenciId")]
+        public IActionResult GetByFakulteId(int ogrenciId)
         {
-            var result = _dersService.GetByDersKodu(dersKodu);
+            var result = _dersKayitService.GetByOgrenciId(ogrenciId);
             if (result.Success)
             {
                 return Ok(result);
@@ -88,27 +87,15 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpGet("getdersDetaylari")]
-        public IActionResult GetDersDetay()
+        [HttpGet("getbydanismanId")]
+        public IActionResult GetBolumDetay(int danismanId)
         {
-            var result = _dersService.GetAllByDersDto();
+            var result = _dersKayitService.GetByDanismanId(danismanId);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
-        }
-
-        [HttpGet("getbydonemid")]
-        public IActionResult GetByDonemId(int donemId)
-        {
-            var result = _dersService.GetByDonemId(donemId);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-
         }
     }
 }

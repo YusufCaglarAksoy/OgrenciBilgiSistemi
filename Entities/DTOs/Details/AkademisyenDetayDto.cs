@@ -20,6 +20,7 @@ namespace Entities.DTOs
         public int SicilNo { get; set; }
         public byte[] SaltSifre { get; set; }
         public byte[] HashSifre { get; set; }
+        public string fotografYolu { get; set; }
     }
 
 }
