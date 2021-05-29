@@ -69,8 +69,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  DanismanId = a.Id,
                                  DanismanAdi = a.Isim,
                                  DanismanMail = a.EMail,
-                                 DanismanSoyadi = a.Soyad
-
+                                 DanismanSoyadi = a.Soyad,
+                                 OnayDurumu = d.OnayDurumu
                              };
                 return result.ToList();
             }

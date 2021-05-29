@@ -13,6 +13,8 @@ namespace Business.Abstract
         IDataResult<List<Ders>> GetAll();
         IDataResult<List<DersDetayDto>> GetById(int Id);
         IDataResult<List<DersDetayDto>> GetByDonemId(int Id);
+        IDataResult<List<DersDetayDto>> GetByBolumId(int Id);
+        IDataResult<List<DersDetayDto>> GetBySinif(int Id);
         IDataResult<List<DersDetayDto>> GetByDersKodu(string Id);
         IDataResult<List<DersDetayDto>> GetAllByDersDto();
 

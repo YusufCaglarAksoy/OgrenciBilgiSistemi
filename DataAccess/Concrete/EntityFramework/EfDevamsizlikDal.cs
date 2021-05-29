@@ -27,7 +27,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  OgrenciSoyadi = o.Soyad,
                                  OgrenciMail = o.EMail,
                                  OgrenciNo = o.OgrenciNo,
-                                 DersAdı = ders.DersAdi,
+                                 DersAdi = ders.DersAdi,
                                  DersKodu = ders.DersKodu,
                                  Sinif = ders.Sinif,
                                  DevamsizlikDurumu = d.DevamsizlikDurumu

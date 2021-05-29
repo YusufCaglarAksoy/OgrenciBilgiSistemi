@@ -11,7 +11,7 @@ namespace Entities.DTOs
         public string OgrenciSoyadi { get; set; }
         public string OgrenciMail { get; set; }
         public int OgrenciNo { get; set; }
-        public string DersAdı { get; set; }
+        public string DersAdi { get; set; }
         public string DersKodu { get; set; }
         public int Sinif { get; set; }
         public bool DevamsizlikDurumu { get; set; }

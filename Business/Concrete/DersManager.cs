@@ -64,5 +64,15 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(d => d.DonemId == Id), Messages.DersGeted);
         }
+
+        public IDataResult<List<DersDetayDto>> GetByBolumId(int Id)
+        {
+            return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(d => d.BolumId == Id), Messages.DersGeted);
+        }
+
+        public IDataResult<List<DersDetayDto>> GetBySinif(int sinif)
+        {
+            return new SuccessDataResult<List<DersDetayDto>>(_dersDal.GetDersDetaylari(d => d.Sinif == sinif), Messages.DersGeted);
+        }
     }
 }

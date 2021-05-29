@@ -110,5 +110,30 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+
+        [HttpGet("getbybolumid")]
+        public IActionResult GetByBolumId(int bolumId)
+        {
+            var result = _dersService.GetByBolumId(bolumId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpGet("getbysinif")]
+        public IActionResult GetBySinif(int sinif)
+
+        {
+            var result = _dersService.GetBySinif(sinif);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

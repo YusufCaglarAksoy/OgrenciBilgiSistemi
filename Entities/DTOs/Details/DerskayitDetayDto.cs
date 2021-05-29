@@ -44,5 +44,6 @@ namespace Entities.DTOs
         public string DanismanMail { get; set; }
         public string DanismanAdi { get; set; }
         public string DanismanSoyadi { get; set; }
+        public bool OnayDurumu { get; set; }
     }
 }
