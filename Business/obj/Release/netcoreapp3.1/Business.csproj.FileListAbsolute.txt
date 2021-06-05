@@ -1,0 +1,16 @@
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\Business.deps.json
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\Business.dll
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\Business.pdb
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\Core.dll
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\DataAccess.dll
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\Entities.dll
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\DataAccess.pdb
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\Entities.pdb
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\bin\Release\netcoreapp3.1\Core.pdb
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\obj\Release\netcoreapp3.1\Business.csprojAssemblyReference.cache
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\obj\Release\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\obj\Release\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\obj\Release\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\obj\Release\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\obj\Release\netcoreapp3.1\Business.dll
+C:\Users\Mehmet\Documents\GitHub\OgrenciBilgiSistemi\Business\obj\Release\netcoreapp3.1\Business.pdb

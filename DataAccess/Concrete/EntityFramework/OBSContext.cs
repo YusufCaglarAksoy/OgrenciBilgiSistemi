@@ -8,7 +8,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=OgrenciBilgiSistemi;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=tcp:webapidbservera.database.windows.net,1433;Initial Catalog=OgrenciBilgiSistemi;Persist Security Info=False;User ID=ObsFırat;Password=Obs123456;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;");
         }
 
         public DbSet<Akademisyen> Akademisyenler { get; set; }
