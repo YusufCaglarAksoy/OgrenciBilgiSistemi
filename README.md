@@ -31,6 +31,11 @@ Akademisyen(academician)/Danışman(advisor): "Sicil No:8778"--"Sifre:123456"
 Akademisyen(academician): "Sicil No:12348"--"Sifre:123456"            
 Öğrenci(student): "Öğrenci No:190290000"--"Sifre:123456"
 
+Project:
+https://ogrencibilgisistemifirat.web.app
+
+Backend: https://github.com/YusufCaglarAksoy/OgrenciBilgiSistemi
+Frontend: https://github.com/YusufCaglarAksoy/OBSFrontend
 
 @AksoyTakimi:
 
