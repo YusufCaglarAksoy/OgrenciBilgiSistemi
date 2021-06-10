@@ -34,13 +34,13 @@ Akademisyen(academician): "Sicil No:12348"--"Sifre:123456"
 
 @AksoyTakimi:
 
-<a href="https://www.linkedin.com/in/yusuf-çağlar-aksoy-81b4b6207/">Yusuf Çağlar Aksoy</a>
-<a href="https://www.linkedin.com/in/gizem-uçar-644a33209/">Gizem Uçar</a>
-<a href="https://www.linkedin.com/in/tuncay-forma-b969621a2/">Tuncay Forma</a>
-<a href="https://www.linkedin.com/in/fthalc/">Fatih Alıcı</a>
-<a href="https://www.linkedin.com/in/kadir-şehmus-arslan-29716420a/">Kadir Şehmus Arslan</a>
-<a href="https://www.linkedin.com/in/çağatay-ucer-1a7b45196/">Çağatay Üçer</a>
-<a href="https://www.linkedin.com/in/mehmet-berk-gülşen-5784a31b0/">Mehmet Berk Gülşen</a>
-<a href="">Furkan Emir</a>
-<a href="">Serhat Karcı</a>
-<a href="https://www.linkedin.com/in/ali-mert-bakir-8a7b58200/">Ali Mert Bakir</a>
+<a href="https://www.linkedin.com/in/yusuf-çağlar-aksoy-81b4b6207/">Yusuf Çağlar Aksoy</a><br />
+<a href="https://www.linkedin.com/in/gizem-uçar-644a33209/">Gizem Uçar</a><br />
+<a href="https://www.linkedin.com/in/tuncay-forma-b969621a2/">Tuncay Forma</a><br />
+<a href="https://www.linkedin.com/in/fthalc/">Fatih Alıcı</a><br />
+<a href="https://www.linkedin.com/in/kadir-şehmus-arslan-29716420a/">Kadir Şehmus Arslan</a><br />
+<a href="https://www.linkedin.com/in/çağatay-ucer-1a7b45196/">Çağatay Üçer</a><br />
+<a href="https://www.linkedin.com/in/mehmet-berk-gülşen-5784a31b0/">Mehmet Berk Gülşen</a><br />
+<a href="">Furkan Emir</a><br />
+<a href="">Serhat Karcı</a><br />
+<a href="https://www.linkedin.com/in/ali-mert-bakir-8a7b58200/">Ali Mert Bakir</a><br />
